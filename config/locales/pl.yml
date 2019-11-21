@@ -1,6 +1,6 @@
 pl:
   site_title: "FmaRubyOnRailsSzablon"
   public:
-  index:
-    title: "Public#index"
-    paragraph: "Znajdziesz mnie w app/views/public/index.html.erb"
+    index:
+      title: "Public#index"
+      paragraph: "Znajdziesz mnie w app/views/public/index.html.erb"
