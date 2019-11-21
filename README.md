@@ -1,24 +1,10 @@
-# README
+### hCaptcha
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The hCaptcha gem does not respond to traffic coming from `localhost`, as per the "Local Development" section in https://docs.hcaptcha.com
 
-Things you may want to cover:
+On a Mac, you'll need to add the following to your `/etc/private/hosts` (`/etc/hosts` on Ubuntu):
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+127.0.0.1       localhost.fmadata.com
+127.0.0.1       test.fmadata.com
+```
