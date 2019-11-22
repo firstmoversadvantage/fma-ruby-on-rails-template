@@ -3,14 +3,19 @@ pl:
   public:
     index:
       title: "Public#index"
-      paragraph: "Znajdziesz mnie w app/views/public/index.html.erb"
+      paragraph: "Znajdziesz mnie w app/views/public/index.pl.html.erb"
     privacy_policy:
       title: 'Polityka prywatności'
+      paragraph: "Znajdziesz mnie w app/views/public/privacy_policy.pl.html.erb"
     cookie_policy:
       title: 'Polityka cookie'
+      paragraph: "Znajdziesz mnie w app/views/public/cookie_policy.pl.html.erb"
     terms_of_use:
       title: 'Zasady użytkowania'
+      paragraph: "Znajdziesz mnie w app/views/public/terms_of_use.pl.html.erb"
     ccpa:
       title: 'Prywatność konsumenta z Kalifornii'
-    faq: 
+      paragraph: "Znajdziesz mnie w app/views/public/disclosure_ccpa.pl.html.erb"
+    faq:
       title: 'FAQ'
+      paragraph: "Znajdziesz mnie w app/views/public/faq.pl.html.erb"

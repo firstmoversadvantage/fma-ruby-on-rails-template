@@ -13,3 +13,84 @@
  *= require_tree .
  *= require_self
  */
+
+ .body-main {
+   min-height: 420px;
+   margin-bottom: 60px;
+ }
+
+ .highlight-for-emphasis {
+   font-weight: bold;
+   font-variant-caps: all-small-caps;
+   background-color: #FFFFCC;
+ }
+
+ .font-logo {
+   font-size: 48px;
+ }
+
+ .footer {
+   padding-bottom: 20px;
+ }
+
+ h1 {
+   font-size: 36px;
+ }
+
+ h2 {
+   margin-bottom: 40px;
+ }
+
+ .header {
+   padding-top: 10px;
+   padding-bottom: 10px;
+ }
+
+ .sign-in-out {
+   font-size: 24px;
+ }
+
+ .to-do-item {
+   padding-bottom: 20px;
+ }
+
+ /* Extra small devices (portrait phones, less than 576px)
+ No media query for `xs` since this is the default in Bootstrap */
+
+ /* Small devices (landscape phones, 576px and up) */
+ @media (min-width: 576px) {}
+
+ /* Medium devices (tablets, 768px and up) */
+ @media (min-width: 768px) {}
+
+ /* Large devices (desktops, 992px and up) */
+ @media (min-width: 992px) {}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+ @media (min-width: 1200px) {}
+
+ #error_explanation {
+   color: #f00;
+   margin: 35px 0 35px 0;
+   ul {
+     list-style: none;
+     margin: 0 0 18px 0;
+   }
+ }
+
+ input[type="checkbox"] {
+   margin-right: 15px;
+   font-size: 28px;
+ }
+
+ .checkbox-label {
+   font-size: 18px;
+ }
+
+ #submit-consumer-request {
+   margin-top: 75px;
+ }
+
+ span.task-validated-icon {
+   font-size: 2em;
+ }
