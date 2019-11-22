@@ -4,6 +4,10 @@ class PublicController < ApplicationController
   def index
   end
   
+  def disclosure_ccpa
+    @title = t('public.ccpa.title')
+  end
+
   def terms_of_use
     @title = t('public.terms_of_use.title')
   end
