@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'hcaptcha', git: 'https://github.com/firstmoversadvantage/hcaptcha'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -52,3 +54,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Use this version of the gem until https://github.com/hashicorp/vault-rails/pull/76 is merged
+gem 'vault-rails', git: 'https://github.com/madding/vault-rails.git', branch: 'fix-dirty-changed-attributes'
+gem "aws-sdk-s3", require: false
