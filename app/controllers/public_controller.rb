@@ -5,9 +5,9 @@ class PublicController < ApplicationController
   end
   
   def disclosure_ccpa
-    @title = 'California Consumer Privacy Act Disclosures'
+    @title = t('public.ccpa.title')
   end
-  
+
   def terms_of_use
     @title = t('public.terms_of_use.title')
   end
