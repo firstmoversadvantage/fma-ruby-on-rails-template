@@ -4,3 +4,7 @@ pl:
     index:
       title: "Public#index"
       paragraph: "Znajdziesz mnie w app/views/public/index.html.erb"
+    privacy_policy:
+      title: 'Polityka prywatności'
+    cookie_policy:
+      title: 'Polityka cookie'
