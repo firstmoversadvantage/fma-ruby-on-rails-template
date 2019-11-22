@@ -30,4 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  site_title: "FmaRubyOnRailsTemplate"
+  public:
+    index:
+      title: "Public#index"
+      paragraph: "Find me in app/views/public/index.html.erb"
