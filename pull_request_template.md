@@ -16,6 +16,3 @@
 #### Things to watch out for
 - [N] Does this PR have any migrations?
 - [N] Does this PR add new dependencies?
-
-#### Reminder
-If there are any migrations please remember that red2 and red1 share the same database. Also, some of the models use other database than the one configured in database.yml.
