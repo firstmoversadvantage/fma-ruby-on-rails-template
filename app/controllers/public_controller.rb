@@ -3,6 +3,10 @@ class PublicController < ApplicationController
 
   def index
   end
+  
+  def terms_of_use
+    @title = t('public.terms_of_use.title')
+  end
 
   def privacy_policy
     @title = t('public.privacy_policy.title')
