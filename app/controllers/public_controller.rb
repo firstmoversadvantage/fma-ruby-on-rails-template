@@ -5,7 +5,7 @@ class PublicController < ApplicationController
   end
   
   def faq
-    @title = 'FAQ'
+    @title = t('public.faq.title')
   end 
 
   def disclosure_ccpa
