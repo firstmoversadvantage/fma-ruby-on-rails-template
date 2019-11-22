@@ -1,0 +1,22 @@
+<h1>FAQ</h1>
+<dl>
+  <%# Questions that do not pertain to in-house requests %>
+  <% unless @in_house_request && Rails.env == 'production' %>
+    <dt>How Are You Related to <%= @white_label[:company_name] %>?</dt>
+    <dd><%= COMPLIANCE_COMPANY[:company_name] %> is a third-party service provider for <%= @white_label[:company_name] %>. We process your requests, on their behalf, in this secure web application.</dd>
+  <% end %>
+
+  <%# Questions that pertain to all visitors %>
+  <dt>What Services Are Provided By This Web App?</dt>
+  <dd>You can use this secure Web App to make requests related to consumer privacy acts. Such requests include: opt-out requests, disclosure requests, and deletion requests.</dd>
+  <dt>What is a CURL?</dt>
+  <dd>A Confidential Uniform Resource Locater (CURL) is a unique, password protected, web location for your Consumer Request. We use a CURL in lieu of forcing you to create an account.</dd>
+  <dt>Am I Required to Create a User Account?</dt>
+  <dd>No -- just be sure to bookmark the Confidential Uniform Resource Locater (CURL) for your request! Each CURL is unique and reserved for only you. Each CURL will be protected with a password for maximum privacy. After completing your first Verified Consumer Request, you will be given the option to create an account for the convenience of making multiple requests to one or more businesses. However, you do not need to create a User Account to use the basic features of this Web App.</dd>
+  <dt>How is my Data Protected?</dt>
+  <dd>All Consumer Personal Information is encrypted in transit via HTTPS. You can see our secure certificate by clicking the lock icon in your browser location bar. We also encrypt all Personal Information at rest when it is stored within our database. The encryption keys for data at rest are not stored on this Web App server.</dd>
+  <dt>When is My Request Sent to <%= @white_label[:company_name] %>?</dt>
+  <dd>Your Consumer Request will be available for <%= @white_label[:company_name] %> to download as soon as you have verified and approved the request. You will also be able to see delivery status by re-visiting your unique request URL.</dd>
+  <dt>Have You Ever Been Curling?</dt>
+  <dd>No, but we think it is a fun Olympic sport to watch on TV.</dd>
+</dl>

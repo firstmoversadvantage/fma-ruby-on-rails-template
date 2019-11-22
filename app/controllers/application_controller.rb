@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :set_white_label
-  
   # We use the @white_label variable to hold information related to our client
   # for the request in quetion. Rererral links from the client will include a
   # uuid that we will use to set @white_label variable for the session. In the
