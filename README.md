@@ -1,10 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 ## Ruby version
 
   This project requires Ruby 2.6.5 as denoted in the `.ruby-version` file. This project also requires Rails 6.0. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
@@ -40,3 +33,14 @@ In the test and development modes you do not need an actual Vault server running
 ## Services (job queues, cache servers, search engines, etc.)
 
 ## Deployment instructions
+
+### hCaptcha
+
+The hCaptcha gem does not respond to traffic coming from `localhost`, as per the "Local Development" section in https://docs.hcaptcha.com
+
+On a Mac, you'll need to add the following to your `/etc/private/hosts` (`/etc/hosts` on Ubuntu):
+
+```
+127.0.0.1       localhost.fmadata.com
+127.0.0.1       test.fmadata.com
+```

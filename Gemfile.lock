@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/firstmoversadvantage/hcaptcha
+  revision: 57e918cd5ab2e680c61c2473b62e112fcdc15c68
+  specs:
+    hcaptcha (0.0.0)
+      json
+
+GIT
   remote: https://github.com/madding/vault-rails.git
   revision: 99233c7cc01f92aaa83f3057cac1ebb848b3ac9a
   branch: fix-dirty-changed-attributes
@@ -108,6 +115,7 @@ GEM
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
     jmespath (1.4.0)
+    json (2.2.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -232,6 +240,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  hcaptcha!
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4)
