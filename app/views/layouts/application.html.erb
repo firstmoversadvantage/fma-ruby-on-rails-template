@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FmaRubyOnRailsTemplate</title>
+    <title><%= t('site_title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+          rel="stylesheet" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+          crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+            crossorigin="anonymous">
+    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/<%= Rails.application.credentials.dig(:font_awesome_download_key)%>.js" 
+            crossorigin="anonymous">
+    </script>
   </head>
 
   <body>
-    <% if flash[:alert] %>
-      <div class="alert alert-warning" role="alert">
-        <%= flash[:alert] %>
+     <!-- fixed-width container -->
+    <div class="container">
+      <div class="header">
       </div>
-    <% elsif flash[:error] %>
-      <div class="alert alert-danger" role="alert">
-        <%= flash[:error] %>
-      </div>
-    <% elsif flash[:info] %>
-      <div class="alert alert-info" role="alert">
-        <%= flash[:info] %>
-        <%= link_to('OK', saw_cookie_notice_path, method: :post, class: 'float-right') unless cookies[:saw_cookie_notice] %>
-      </div>
-    <% elsif flash[:notice]%>
-      <div class="alert alert-primary" role="alert">
-        <%= flash[:notice] %>
-      </div>
-    <% elsif flash[:success]%>
-      <div class="alert alert-success" role="alert">
-        <%= flash[:success] %>
-      </div>
-    <% end %>
-    <%= yield %>
+    </div>
+
+    <div class="container body-main">
+      <% if flash[:alert] %>
+        <div class="alert alert-warning" role="alert">
+          <%= flash[:alert] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class="alert alert-danger" role="alert">
+          <%= flash[:error] %>
+        </div>
+      <% elsif flash[:info] %>
+        <div class="alert alert-info" role="alert">
+          <%= flash[:info] %>
+          <%= link_to('OK', saw_cookie_notice_path, method: :post, class: 'float-right') unless cookies[:saw_cookie_notice] %>
+        </div>
+      <% elsif flash[:notice]%>
+        <div class="alert alert-primary" role="alert">
+          <%= flash[:notice] %>
+        </div>
+        <% elsif flash[:success]%>
+          <div class="alert alert-success" role="alert">
+            <%= flash[:success] %>
+          </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
