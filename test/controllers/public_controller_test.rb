@@ -6,4 +6,9 @@ class PublicControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get cookie_policy" do
+    get cookie_policy_url
+    assert_response :success
+  end
+
 end
