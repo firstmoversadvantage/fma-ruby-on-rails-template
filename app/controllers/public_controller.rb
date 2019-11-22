@@ -5,9 +5,9 @@ class PublicController < ApplicationController
   end
   
   def terms_of_use
-    @title = 'Terms of Use'
+    @title = t('public.terms_of_use.title')
   end
-  
+
   def privacy_policy
     @title = t('public.privacy_policy.title')
   end
