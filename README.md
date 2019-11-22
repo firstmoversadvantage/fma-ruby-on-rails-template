@@ -24,6 +24,12 @@ Ask someone in charge about `credentials.yml.enc` and `master.key`
 
   Run rake db:setup to create and migrate the database from schema (db/schema.rb).
 
+## Vault
+Vault is a key component to this project. We mostly are using its Encryption As A Service feature. This functionality is wrapped by the vault-rails gem.
+
+Please note that we currently are using a forked version of the Gem until Rails 5.2 is supported in the native gem. See this PR for details.
+
+In the test and development modes you do not need an actual Vault server running. The gem will intercept and perform all encryption that would normally by done by the Vault encryption server.
 ## How to run the test suite
 
   `rails test` # run all tests

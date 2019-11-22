@@ -53,4 +53,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Use this version of the gem until https://github.com/hashicorp/vault-rails/pull/76 is merged
+gem 'vault-rails', git: 'https://github.com/madding/vault-rails.git', branch: 'fix-dirty-changed-attributes'
 gem "aws-sdk-s3", require: false
