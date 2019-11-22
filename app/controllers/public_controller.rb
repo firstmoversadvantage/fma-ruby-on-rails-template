@@ -5,15 +5,15 @@ class PublicController < ApplicationController
   end
 
   def privacy_policy
-    @title = 'Privacy Policy'
+    @title = t('public.privacy_policy.title')
   end
-  
+
   def check_if_saw_cookie_notice
     flash[:info] = "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details.".html_safe unless cookies[:saw_cookie_notice]
   end
 
   def cookie_policy
-    @title = t('Cookie Policy')
+    @title = t('public.cookie_policy.title')
   end
 
   def saw_cookie_notice
