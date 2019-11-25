@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # Public Controller
   # get 'public/index'
-  get 'contact-us', to: 'public#contact_us'
+  match 'contact-us', to: 'public#contact_us', via: [:get, :post]
+
   get 'cookie-policy', to: 'public#cookie_policy'
   get 'disclosure-ccpa', to: 'public#disclosure_ccpa'
   get 'faq', to: 'public#faq'
