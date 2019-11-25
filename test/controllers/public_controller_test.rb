@@ -30,4 +30,19 @@ class PublicControllerTest < ActionDispatch::IntegrationTest
     get contact_us_url
     assert_response :success
   end
+
+  test "should post contact_us and save information about customer request" do
+    contact_us_params = {
+      contact_request: {
+        name: 'Test Name',
+        email_address: 'test@test.com',
+        telephone: '123456789'
+      }
+    }
+
+    assert_difference('ContactRequest.count') do 
+      post contact_us_url, params: contact_us_params
+    end
+    assert_response :success
+  end
 end

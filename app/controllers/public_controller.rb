@@ -29,6 +29,13 @@ class PublicController < ApplicationController
   end
 
   def contact_us
+    if request.post?
+      @contact_request = ContactRequest.new(contact_us_params)
+      @contact_request.save!
+      flash[:notice] = 'Your request has been saved. We will contact you ASAP.'
+    else
+      @contact_request = ContactRequest.new
+    end
     @title = t('public.contact_us.title')
   end
 
@@ -36,5 +43,15 @@ class PublicController < ApplicationController
     cookies[:saw_cookie_notice] = true
     flash[:info] = nil
     redirect_back(fallback_location: root_path)
+  end
+
+  private
+  def contact_us_params
+    params.require(:contact_request)
+          .permit(
+            :name,
+            :email_address,
+            :telephone
+          )
   end
 end
