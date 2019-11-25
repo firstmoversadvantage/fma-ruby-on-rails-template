@@ -28,6 +28,10 @@ class PublicController < ApplicationController
     @title = t('public.cookie_policy.title')
   end
 
+  def contact_us
+    @title = t('public.contact_us.title')
+  end
+
   def saw_cookie_notice
     cookies[:saw_cookie_notice] = true
     flash[:info] = nil

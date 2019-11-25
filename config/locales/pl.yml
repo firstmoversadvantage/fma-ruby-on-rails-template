@@ -19,3 +19,5 @@ pl:
     faq:
       title: 'FAQ'
       paragraph: "Znajdziesz mnie w app/views/public/faq.pl.html.erb"
+    contact_us: 
+      title: 'Skontaktuj się z nami'

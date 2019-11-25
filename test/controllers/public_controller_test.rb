@@ -25,4 +25,9 @@ class PublicControllerTest < ActionDispatch::IntegrationTest
     get terms_of_use_url
     assert_response :success
   end
+
+  test "should get contact_us" do
+    get contact_us_url
+    assert_response :success
+  end
 end
