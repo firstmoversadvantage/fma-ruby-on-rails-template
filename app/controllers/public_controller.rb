@@ -31,7 +31,9 @@ class PublicController < ApplicationController
   def contact_us
     if request.post?
       @contact_request = ContactRequest.new(contact_us_params)
-      @contact_request.save!
+      if @contact_request.save!
+        send_email_to_admins_about_new_request
+      end
       flash[:notice] = 'Your request has been saved. We will contact you ASAP.'
     else
       @contact_request = ContactRequest.new
@@ -53,5 +55,10 @@ class PublicController < ApplicationController
             :email_address,
             :telephone
           )
+  end
+
+  def send_email_to_admins_about_new_request
+    admins = User.where(admin: true)
+    ContactRequestMailer.new_contact_request_notice(admins)
   end
 end
