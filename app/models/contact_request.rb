@@ -1,4 +1,8 @@
 class ContactRequest < ApplicationRecord
   include Vault::EncryptedModel
-  vault_attribute :name, :email_address, :telephone
+  vault_lazy_decrypt!
+  
+  vault_attribute :name
+  vault_attribute :email_address
+  vault_attribute :telephone
 end
