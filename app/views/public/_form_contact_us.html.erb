@@ -15,5 +15,6 @@
     <%= label_tag(:telephone) %>
     <%= f.text_field :telephone, class: 'form-control' %>
   </div>
+  <%= hcaptcha_tags %>
   <%= submit_tag 'Submit', class: 'btn btn-primary' %>
 <% end %>
