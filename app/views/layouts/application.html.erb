@@ -36,16 +36,24 @@
           <%= link_to 'en', url_for(locale: 'en') %>&nbsp;|&nbsp;
           <%= link_to 'pl', url_for(locale: 'pl') %>&nbsp;
           <% if user_signed_in? %>
+            |
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fas fa-sign-out-alt sign-in-out" 
                  alt="Sign Out Link" 
                  title="Sign Out"></i>
             <% end %>
           <% else %>
+            |
             <%= link_to new_user_session_path do %> 
               <i class="fas fa-sign-in-alt sign-in-out" 
                  alt="Sign In Link" 
                  title="Sign In"></i>
+            <% end %>
+            |
+            <%= link_to new_user_registration_path do %> 
+              <i class="fas fa-user-plus" 
+                 alt="Sign In Link" 
+                 title="Sign Up"></i>
             <% end %>
           <% end %>
         </span>
