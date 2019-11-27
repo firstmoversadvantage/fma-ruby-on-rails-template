@@ -52,29 +52,8 @@
       </div>
     </div>
 
-    <div class="container body-main">
-      <% if flash[:alert] %>
-        <div class="alert alert-warning" role="alert">
-          <%= flash[:alert] %>
-        </div>
-      <% elsif flash[:error] %>
-        <div class="alert alert-danger" role="alert">
-          <%= flash[:error] %>
-        </div>
-      <% elsif flash[:info] %>
-        <div class="alert alert-info" role="alert">
-          <%= flash[:info] %>
-          <%= link_to('OK', saw_cookie_notice_path, method: :post, class: 'float-right') unless cookies[:saw_cookie_notice] %>
-        </div>
-      <% elsif flash[:notice]%>
-        <div class="alert alert-primary" role="alert">
-          <%= flash[:notice] %>
-        </div>
-        <% elsif flash[:success]%>
-          <div class="alert alert-success" role="alert">
-            <%= flash[:success] %>
-          </div>
-      <% end %>
+    <div class='container body-main'>
+      <%= render 'layouts/flash' %>
       <%= yield %>
     </div>
 
