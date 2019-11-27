@@ -11,7 +11,13 @@ class User < ApplicationRecord
   include Vault::EncryptedModel
   vault_attribute :email
 
-  validates :username, presence: :true, uniqueness: { case_sensitive: false }
+  validates :username, presence: :true, 
+                       uniqueness: { 
+                         case_sensitive: false 
+                       },
+                       length: {
+                         minimum: 3
+                       }
 
   def login
     @login || self.username
