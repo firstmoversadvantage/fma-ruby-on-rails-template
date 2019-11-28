@@ -5,11 +5,12 @@
 ## System dependencies
 
 ## Configuration
-Ask someone in charge about `credentials.yml.enc` and `master.key`
+  Ask someone in charge about `credentials.yml.enc` and `master.key`
 
-To open e.g. in atom, use `EDITOR="atom --wait" rails credentials:edit`
-To open in vim, make sure it's up to date and use `EDITOR=vim rails credentials:edit`
+  To open e.g. in atom, use `EDITOR="atom --wait" rails credentials:edit`
+  To open in vim, make sure it's up to date and use `EDITOR=vim rails credentials:edit`
 
+  Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users).
 ## Database creation
 
   MySQL 5.7 is the recommended version to run on your machine. Once you have MySQL running, run:
