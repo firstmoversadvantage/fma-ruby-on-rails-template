@@ -11,9 +11,9 @@ class User < ApplicationRecord
   include Vault::EncryptedModel
   vault_attribute :email
 
-  validates :username, presence: :true, 
-                       uniqueness: { 
-                         case_sensitive: false 
+  validates :username, presence: :true,
+                       uniqueness: {
+                         case_sensitive: false
                        },
                        length: {
                          minimum: 3
@@ -28,7 +28,7 @@ class User < ApplicationRecord
     if login = conditions.delete(:login)
       where(conditions).where(
                           [
-                            "lower(username) = :value OR lower(email) = :value", 
+                            "lower(username) = :value", 
                             { :value => login.downcase }
                           ]
                        ).first

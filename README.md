@@ -7,6 +7,9 @@
 ## Configuration
 Ask someone in charge about `credentials.yml.enc` and `master.key`
 
+To open e.g. in atom, use `EDITOR="atom --wait" rails credentials:edit`
+To open in vim, make sure it's up to date and use `EDITOR=vim rails credentials:edit`
+
 ## Database creation
 
   MySQL 5.7 is the recommended version to run on your machine. Once you have MySQL running, run:
