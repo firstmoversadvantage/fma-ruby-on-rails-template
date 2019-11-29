@@ -1,14 +1,15 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :omniauthable
   attr_writer :login
+  attr_accessor :email
 
   before_save :create_email_hash
 
+  # Include default devise modules. Others available are:
+  # :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable, :trackable,
-         authentication_keys: [:login]
+    :recoverable, :rememberable, :validatable,
+    :confirmable, :lockable, :timeoutable, :trackable,
+    authentication_keys: [:login]
 
   include Vault::EncryptedModel
   vault_attribute :email
@@ -21,16 +22,8 @@ class User < ApplicationRecord
                          minimum: 3
                        }
 
-  def email=(val)
-    self[:email] = val
-  end
-
-  def email
-    self[:email]
-  end
-
-  def email_required?
-    false
+  def create_email_hash
+    self.email_hash = Digest::SHA512.hexdigest(email)
   end
 
   def login
@@ -41,11 +34,11 @@ class User < ApplicationRecord
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
       where(conditions).where(
-                          [
-                            "lower(username) = :value", 
-                            { :value => login.downcase }
-                          ]
-                       ).first
+          [
+              "lower(username) = :value",
+              { :value => login.downcase }
+          ]
+      ).first
     else
       if conditions[:username].nil?
         where(conditions).first
@@ -55,7 +48,7 @@ class User < ApplicationRecord
     end
   end
 
-  def create_email_hash
-    self.email_hash = Digest::SHA256.hexdigest(self[:email])
+  def will_save_change_to_email?
+    false
   end
 end
