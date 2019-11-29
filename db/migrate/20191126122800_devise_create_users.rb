@@ -38,6 +38,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.boolean   :is_admin, default: false
       t.string    :email_encrypted
       t.string    :username, null: false
+      t.string    :email_hash
     end
 
     add_index :users, :email,                unique: true
