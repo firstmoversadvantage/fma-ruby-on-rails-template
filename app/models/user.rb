@@ -21,6 +21,18 @@ class User < ApplicationRecord
                          minimum: 3
                        }
 
+  def email=(val)
+    self[:email] = val
+  end
+
+  def email
+    self[:email]
+  end
+
+  def email_required?
+    false
+  end
+
   def login
     @login || self.username
   end
@@ -44,8 +56,6 @@ class User < ApplicationRecord
   end
 
   def create_email_hash
-    if self.email_changed?
-      self.email_hash = Digest::SHA256.hexdigest(email)
-    end
+    self.email_hash = Digest::SHA256.hexdigest(self[:email])
   end
 end
