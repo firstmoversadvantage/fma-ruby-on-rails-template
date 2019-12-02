@@ -11,6 +11,7 @@ class User < ApplicationRecord
     :confirmable, :lockable, :timeoutable, :trackable,
     authentication_keys: [:login]
 
+
   include Vault::EncryptedModel
   vault_attribute :email
 
@@ -22,12 +23,8 @@ class User < ApplicationRecord
                          minimum: 3
                        }
 
-  def create_email_hash
-    self.email_hash = Digest::SHA256.hexdigest(email)
-  end
-
-  def login
-    @login || self.username
+  def self.search_by_email_hash(email)
+    where(email_hash: Digest::SHA256.hexdigest(email)).first
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)
@@ -46,6 +43,14 @@ class User < ApplicationRecord
         where(username: conditions[:username]).first
       end
     end
+  end
+
+  def create_email_hash
+    self.email_hash = Digest::SHA256.hexdigest(email)
+  end
+
+  def login
+    @login || self.username
   end
 
   def will_save_change_to_email?
