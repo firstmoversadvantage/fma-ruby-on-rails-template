@@ -20,7 +20,7 @@ class UserTest < ActiveSupport::TestCase
     assert_equal user.email_hash, Digest::SHA256.hexdigest(@user_params[:email])
   end
 
-  test 'find user by hashed email' do
+  test '.search_by_email_hash' do
     User.create(@user_params)
 
     user = User.search_by_email_hash(@user_params[:email])
