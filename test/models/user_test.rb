@@ -19,7 +19,7 @@ class UserTest < ActiveSupport::TestCase
     user = User.find_by(username: 'test')
     assert_equal user.username, 'test'
     assert_equal user.email_encrypted, '2Vt/b0vDKcerRISbXQAsYg=='
-    assert_equal user.email_hash, Digest::SHA512.hexdigest(user_params[:email])
+    assert_equal user.email_hash, Digest::SHA256.hexdigest(user_params[:email])
   end
 
   test 'find user by hashed email' do

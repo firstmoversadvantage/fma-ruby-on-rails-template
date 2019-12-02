@@ -23,7 +23,7 @@ class User < ApplicationRecord
                        }
 
   def create_email_hash
-    self.email_hash = Digest::SHA512.hexdigest(email)
+    self.email_hash = Digest::SHA256.hexdigest(email)
   end
 
   def login
