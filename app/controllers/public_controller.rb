@@ -31,11 +31,11 @@ class PublicController < ApplicationController
   def contact_us
     if request.post?
       @contact_request = ContactRequest.new(contact_us_params)
-      if verify_hcaptcha(model: @contact_request) && @contact_request.save!
+      if @contact_request.save!
         send_email_to_admins_about_new_request
         flash[:notice] = 'Your request has been saved. We will contact you ASAP.'
       else
-        render 'contact_request'
+        render 'contact_us'
       end
     else
       @contact_request = ContactRequest.new
@@ -60,7 +60,7 @@ class PublicController < ApplicationController
   end
 
   def send_email_to_admins_about_new_request
-    admins = User.where(admin: true)
-    ContactRequestMailer.new_contact_request_notice(admins)
+    admins = User.where(is_admin: true)
+    ContactRequestMailer.new_contact_request_notice(admins).deliver_now
   end
 end
