@@ -1,4 +1,8 @@
 pl:
+  activerecord:
+    attributes:
+      user: 
+        username: 'Nazwa użytkownika'
   site_title: "FmaRubyOnRailsSzablon"
   public:
     index:

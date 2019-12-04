@@ -35,34 +35,33 @@
         <span class="float-right">
           <%= link_to 'en', url_for(locale: 'en') %>&nbsp;|&nbsp;
           <%= link_to 'pl', url_for(locale: 'pl') %>&nbsp;
-          <i class="fas fa-sign-in-alt sign-in-out" alt="Sign In Link" title="Sign In"></i>
+          <% if user_signed_in? %>
+            |
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fas fa-sign-out-alt sign-in-out" 
+                 alt="Sign Out Link" 
+                 title="Sign Out"></i>
+            <% end %>
+          <% else %>
+            |
+            <%= link_to new_user_session_path do %> 
+              <i class="fas fa-sign-in-alt sign-in-out" 
+                 alt="Sign In Link" 
+                 title="Sign In"></i>
+            <% end %>
+            |
+            <%= link_to new_user_registration_path do %> 
+              <i class="fas fa-user-plus" 
+                 alt="Sign In Link" 
+                 title="Sign Up"></i>
+            <% end %>
+          <% end %>
         </span>
       </div>
     </div>
 
-    <div class="container body-main">
-      <% if flash[:alert] %>
-        <div class="alert alert-warning" role="alert">
-          <%= flash[:alert] %>
-        </div>
-      <% elsif flash[:error] %>
-        <div class="alert alert-danger" role="alert">
-          <%= flash[:error] %>
-        </div>
-      <% elsif flash[:info] %>
-        <div class="alert alert-info" role="alert">
-          <%= flash[:info] %>
-          <%= link_to('OK', saw_cookie_notice_path, method: :post, class: 'float-right') unless cookies[:saw_cookie_notice] %>
-        </div>
-      <% elsif flash[:notice]%>
-        <div class="alert alert-primary" role="alert">
-          <%= flash[:notice] %>
-        </div>
-        <% elsif flash[:success]%>
-          <div class="alert alert-success" role="alert">
-            <%= flash[:success] %>
-          </div>
-      <% end %>
+    <div class='container body-main'>
+      <%= render 'layouts/flash' %>
       <%= yield %>
     </div>
 

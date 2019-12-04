@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Public Controller
   # get 'public/index'
   match 'contact-us', to: 'public#contact_us', via: [:get, :post]
