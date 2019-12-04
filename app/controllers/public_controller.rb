@@ -31,9 +31,10 @@ class PublicController < ApplicationController
   def contact_us
     if request.post?
       @contact_request = ContactRequest.new(contact_us_params)
-      if @contact_request.save!
-        send_email_to_admins_about_new_request
+      if verify_hcaptcha(model: @contact_request) && 
+         @contact_request.save!
         flash[:notice] = 'Your request has been saved. We will contact you ASAP.'
+        send_email_to_admins_about_new_request
       else
         render 'contact_us'
       end
