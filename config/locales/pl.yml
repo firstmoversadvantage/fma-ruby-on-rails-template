@@ -3,6 +3,18 @@ pl:
     attributes:
       user: 
         username: 'Nazwa użytkownika'
+      contact_request:
+        name: 'Imię'
+        email_address: 'Adres e-mail'
+        telephone: 'Telefon'
+        comments: 'Wiadomość'
+  helpers:
+    label:
+      contact_request:
+        name: 'Imię'
+        email_address: 'Adres e-mail'
+        telephone: 'Telefon'
+        comments: 'Wiadomość'
   site_title: "FmaRubyOnRailsSzablon"
   public:
     index:
@@ -25,3 +37,9 @@ pl:
       paragraph: "Znajdziesz mnie w app/views/public/faq.pl.html.erb"
     contact_us: 
       title: 'Skontaktuj się z nami'
+      flash:
+        contact_request_saved: 'Prośba o kontakt została zapisana, skontaktujemy się z Tobą jak najszybciej.'
+      form:
+        comments:
+          placeholder: 'Max 500 znaków.'
+        submit: 'Wyślij'

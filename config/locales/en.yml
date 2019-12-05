@@ -34,6 +34,11 @@ en:
     attributes:
       user:
         username: 'Username'
+      contact_request:
+          name: 'Name'
+          email_address: 'Email address'
+          telephone: 'Telephone'
+          comments: 'Comments'
   site_title: "FmaRubyOnRailsTemplate"
   public:
     index:
@@ -51,3 +56,9 @@ en:
       title: 'FAQ'
     contact_us: 
       title: 'Contact us'
+      flash:
+        contact_request_saved: 'Your request has been saved. We will contact you ASAP.'
+      form:
+        comments:
+          placeholder: 'Max 500 characters.'
+        submit: 'Submit'
