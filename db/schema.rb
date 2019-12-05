@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_122800) do
     t.string "name_encrypted"
     t.string "email_address_encrypted"
     t.string "telephone_encrypted"
+    t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

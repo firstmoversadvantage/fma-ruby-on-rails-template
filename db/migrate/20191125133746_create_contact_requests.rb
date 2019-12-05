@@ -4,6 +4,7 @@ class CreateContactRequests < ActiveRecord::Migration[6.0]
       t.string :name_encrypted
       t.string :email_address_encrypted
       t.string :telephone_encrypted
+      t.text :comments
 
       t.timestamps
     end

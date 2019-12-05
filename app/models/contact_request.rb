@@ -3,6 +3,7 @@ class ContactRequest < ApplicationRecord
 
   validates :name, presence: true
   validates :email_address, presence: true
+  validates :comments, length: { maximum: 500 }
 
   include Vault::EncryptedModel
   vault_lazy_decrypt!
