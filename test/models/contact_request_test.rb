@@ -11,7 +11,7 @@ class ContactRequestTest < ActiveSupport::TestCase
                                       telephone: '1234567890'
                                     )
     contact_request.reload
-    binding.pry
+
     assert_equal contact_request.name, 'test'
     assert_equal contact_request.email_address, 'test@fma_template.com'
     assert_equal contact_request.telephone, '1234567890'

@@ -1,8 +1,15 @@
 <div>
   <% flash.each do |type, msg| %>
-    <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">
-      <%= msg %>
-      <button class="close" data-dismiss="alert">x</button>
-    </div>
+    <% if flash_message_is_cookie_info(msg) && cookies[:saw_cookie_notice] == nil %>
+      <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">
+        <%= msg %>
+        <%= link_to('X', saw_cookie_notice_path, method: :post, class: 'float-right') unless cookies[:saw_cookie_notice] %>
+      </div>
+    <% else %>
+      <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">
+        <%= msg %>
+        <button class="close" data-dismiss="alert">x</button>
+      </div>
+    <% end %>
   <% end %> 
 </div>
