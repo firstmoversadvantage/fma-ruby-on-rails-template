@@ -39,6 +39,7 @@ pl:
       title: 'Skontaktuj się z nami'
       flash:
         contact_request_saved: 'Prośba o kontakt została zapisana, skontaktujemy się z Tobą jak najszybciej.'
+        only_admins_allowed: 'Brak uprawnień do przeglądania zawartości tej strony.'
       form:
         comments:
           placeholder: 'Max 500 znaków.'

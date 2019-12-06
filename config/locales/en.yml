@@ -58,6 +58,7 @@ en:
       title: 'Contact us'
       flash:
         contact_request_saved: 'Your request has been saved. We will contact you ASAP.'
+        only_admins_allowed: 'You are not allowed to enter this page.'
       form:
         comments:
           placeholder: 'Max 500 characters.'
