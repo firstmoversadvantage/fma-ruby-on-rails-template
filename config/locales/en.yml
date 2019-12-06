@@ -38,7 +38,7 @@ en:
           name: 'Name'
           email_address: 'Email address'
           telephone: 'Telephone'
-          comments: 'Comments'
+          comments: 'Message'
   site_title: "FmaRubyOnRailsTemplate"
   public:
     index:
