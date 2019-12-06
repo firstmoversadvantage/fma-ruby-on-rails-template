@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class ContactRequestTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   test 'contact request has name, email and telephone encrypted' do
     contact_request = ContactRequest.create(
                                       name: 'test',
