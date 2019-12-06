@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 857c7846038818efaf46bf68421be3864a976403
+  branch: master
+  specs:
+    faker (2.8.0)
+      i18n (>= 1.6, < 1.8)
+
+GIT
   remote: https://github.com/firstmoversadvantage/hcaptcha
   revision: 57e918cd5ab2e680c61c2473b62e112fcdc15c68
   specs:
@@ -261,6 +269,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   devise-i18n
+  faker!
   hcaptcha!
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
