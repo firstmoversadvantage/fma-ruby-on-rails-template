@@ -13,4 +13,6 @@ class ContactRequest < ApplicationRecord
   vault_attribute :name
   vault_attribute :email_address
   vault_attribute :telephone
+
+  default_scope { order('created_at DESC') }
 end
