@@ -1,11 +1,11 @@
 <h2>Contact requests</h2>
 <table class='table'>
 <thead>
-  <td>Name</td>
-  <td>Email Address</td>
-  <td>Telephone</td>
-  <td>Message</td>
-  <td>Created at</td>
+  <td><% t('public.contact_us.table.headings.name') %></td>
+  <td><% t('public.contact_us.table.headings.email') %></td>
+  <td><% t('public.contact_us.table.headings.telephone') %></td>
+  <td><% t('public.contact_us.table.headings.comments') %></td>
+  <td><% t('public.contact_us.table.headings.created_at') %></td>
 </thead>
 <tbody></tbody>
   <% @contact_requests.each do |cr |%>

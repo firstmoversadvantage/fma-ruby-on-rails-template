@@ -43,3 +43,11 @@ pl:
         comments:
           placeholder: 'Max 500 znaków.'
         submit: 'Wyślij'
+      table:
+        headings:
+          name: 'Imię'
+          email: 'Email'
+          telephone: 'Telefon'
+          comments: 'Wiadomość'
+          created_at: 'Dodano'
+  

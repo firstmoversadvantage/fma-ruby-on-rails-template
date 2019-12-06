@@ -62,3 +62,10 @@ en:
         comments:
           placeholder: 'Max 500 characters.'
         submit: 'Submit'
+      table:
+        headings:
+          name: 'Name'
+          email: 'Email address'
+          telephone: 'Telephone'
+          comments: 'Message'
+          created_at: 'Created at'
