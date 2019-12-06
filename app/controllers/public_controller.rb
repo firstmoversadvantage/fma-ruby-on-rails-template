@@ -47,7 +47,7 @@ class PublicController < ApplicationController
 
   def saw_cookie_notice
     cookies[:saw_cookie_notice] = true
-    flash.clear
+    flash.delete(:info)
     redirect_back(fallback_location: root_path)
   end
 
