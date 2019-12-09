@@ -125,6 +125,11 @@ GEM
     devise-i18n (1.8.2)
       devise (>= 4.6)
     erubi (1.9.0)
+    factory_bot (5.1.1)
+      activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
     ffi (1.11.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -269,6 +274,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   devise-i18n
+  factory_bot_rails
   faker!
   hcaptcha!
   jbuilder (~> 2.7)
