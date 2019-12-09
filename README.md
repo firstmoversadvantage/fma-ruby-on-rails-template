@@ -50,3 +50,6 @@ On a Mac, you'll need to add the following to your `/etc/private/hosts` (`/etc/h
 ```
 
 To run hCaptcha correctly in the local environment you have to use `http://test.fmadata.com:3000/` link in the browser
+
+### Testing
+Please use `User` factory when you need users, more info in 'test/factories/user.rb'
