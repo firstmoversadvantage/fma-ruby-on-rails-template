@@ -1,8 +1,6 @@
 require 'test_helper'
 
 class PublicControllerTest < ActionDispatch::IntegrationTest
-  fixtures :users
-
   setup do
     @contact_us_params = {
       contact_request: {
@@ -12,9 +10,7 @@ class PublicControllerTest < ActionDispatch::IntegrationTest
       }
     }
 
-    admin_one = User.find_by(username: 'AdminOne')
-    admin_one.email = 'admin_one@fma_template.com'
-    admin_one.save
+    @admin_one = create(:user, :admin)
   end
   
   test "should get index" do
@@ -70,6 +66,7 @@ class PublicControllerTest < ActionDispatch::IntegrationTest
       assert_response :success
     end
   end
+
   test 'it does not create contact request with email longer than 50 characters' do
     @contact_us_params[:contact_request][:email_address] = Faker::Internet.email(name: Faker::Internet.username(specifier: 50), separators: '_')
     assert_no_difference('ContactRequest.count') do 
