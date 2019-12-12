@@ -76,4 +76,13 @@ en:
   error: 
     one: '%{count} error'
     other: '%{count} errors'
-
+  footer:
+    nav_links:
+      cookie_policy: 'Cookie Policy'
+      faq: 'FAQ'
+      privacy_policy: 'Privacy Policy'
+      terms_of_use: 'Terms of use'
+      contact_us: 'Contact us'
+      contact_requests: 'Contact requests'
+    copyright_text: 'provides tools that businesses use for Consumer Privacy Act Compliance.'
+  

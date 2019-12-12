@@ -67,3 +67,13 @@ pl:
   error: 
     one: '%{count} błąd'
     other: '%{count} błędy'
+  footer:
+    nav_links:
+      cookie_policy: 'Polityka cookies'
+      faq: 'FAQ'
+      privacy_policy: 'Polityka prywatności'
+      terms_of_use: 'Zasady użytkowania'
+      contact_us: 'Kontakt'
+      contact_requests: 'Prośby o kontakt'
+    copyright_text: 'dostarcza narzędzi, których biznes używa do zgodności z ustawą o ochronie prywatności konsumentów (ang. CCPA).'
+
