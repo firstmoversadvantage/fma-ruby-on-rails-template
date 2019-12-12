@@ -8,6 +8,18 @@ pl:
         email_address: 'Adres e-mail'
         telephone: 'Telefon'
         comments: 'Wiadomość'
+    errors:
+      models:
+        contact_request:
+          attributes:
+            email_address:
+              invalid: 'jest nieprawidłowy.'
+              too_long: 'jest zbyt długi (maksimum 50 znaków).'
+            name:
+              invalid: 'jest nieprawidłowe.'
+              too_long: 'jest zbyt długie (maksimum 20 znaków).'
+  flash:
+    cookie: "Ta strona używa plików cookie. Zobacz naszą <a href='/cookie-policy'>Politykę Cookie</a>, aby dowiedzieć się więcej."            
   helpers:
     label:
       contact_request:
@@ -15,7 +27,6 @@ pl:
         email_address: 'Adres e-mail'
         telephone: 'Telefon'
         comments: 'Wiadomość'
-  site_title: "FmaRubyOnRailsSzablon"
   public:
     index:
       title: "Public#index"
@@ -43,6 +54,7 @@ pl:
       form:
         comments:
           placeholder: 'Max 500 znaków.'
+        errors: 'uniemożliwił/y wysłanie zapytania.'
         submit: 'Wyślij'
       table:
         headings:
@@ -51,4 +63,7 @@ pl:
           telephone: 'Telefon'
           comments: 'Wiadomość'
           created_at: 'Dodano'
-  
+  site_title: "FmaRubyOnRailsSzablon"
+  error: 
+    one: '%{count} błąd'
+    other: '%{count} błędy'

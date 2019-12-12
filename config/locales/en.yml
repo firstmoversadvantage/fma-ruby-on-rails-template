@@ -39,7 +39,8 @@ en:
           email_address: 'Email address'
           telephone: 'Telephone'
           comments: 'Message'
-  site_title: "FmaRubyOnRailsTemplate"
+  flash:
+    cookie: "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details."        
   public:
     index:
       title: "Public#index"
@@ -62,6 +63,7 @@ en:
       form:
         comments:
           placeholder: 'Max 500 characters.'
+        errors: 'stopped you from sending contact request.'
         submit: 'Submit'
       table:
         headings:
@@ -70,3 +72,8 @@ en:
           telephone: 'Telephone'
           comments: 'Message'
           created_at: 'Created at'
+  site_title: "FmaRubyOnRailsTemplate"
+  error: 
+    one: '%{count} error'
+    other: '%{count} errors'
+

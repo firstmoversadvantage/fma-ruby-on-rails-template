@@ -22,7 +22,7 @@ class PublicController < ApplicationController
 
   def check_if_saw_cookie_notice
     unless cookies[:saw_cookie_notice]
-      flash[:info] = "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details.".html_safe
+      flash[:info] = t('flash.cookie').html_safe
     end
   end
 

@@ -15,6 +15,6 @@ module ApplicationHelper
   end
 
   def flash_message_is_cookie_info(msg)
-    msg == "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details."
+    msg == t('flash.cookie')
   end
 end

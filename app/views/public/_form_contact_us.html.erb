@@ -2,10 +2,10 @@
               class: 'form',
               method: 'POST',
               local: true,
-              url: '/contact-us' do |f| %>
+              url: "/contact-us?locale=#{params[:locale]}" do |f| %>
   <% if @contact_request.errors.any? %>
     <div class="form-errors">
-        <h4><%= pluralize(@contact_request.errors.count, "error") %> stopped you from sending contact request:</h4>
+        <h4> <%= t('error', count: @contact_request.errors.count) %> <%= t('public.contact_us.form.errors') %></h4>
         <% @contact_request.errors.full_messages.each do |msg| %>
           <ul>
             <li><%= msg %></li>
