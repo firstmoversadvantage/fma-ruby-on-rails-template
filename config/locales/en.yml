@@ -34,7 +34,13 @@ en:
     attributes:
       user:
         username: 'Username'
-  site_title: "FmaRubyOnRailsTemplate"
+      contact_request:
+          name: 'Name'
+          email_address: 'Email address'
+          telephone: 'Telephone'
+          comments: 'Message'
+  flash:
+    cookie: "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details."        
   public:
     index:
       title: "Public#index"
@@ -49,3 +55,34 @@ en:
       title: 'California Consumer Privacy Act Disclosures'
     faq: 
       title: 'FAQ'
+    contact_us: 
+      title: 'Contact us'
+      flash:
+        contact_request_saved: 'Your request has been saved. We will contact you ASAP.'
+        only_admins_allowed: 'You are not allowed to enter this page.'
+      form:
+        comments:
+          placeholder: 'Max 500 characters.'
+        errors: 'stopped you from sending contact request.'
+        submit: 'Submit'
+      table:
+        headings:
+          name: 'Name'
+          email: 'Email address'
+          telephone: 'Telephone'
+          comments: 'Message'
+          created_at: 'Created at'
+  site_title: "FmaRubyOnRailsTemplate"
+  error: 
+    one: '%{count} error'
+    other: '%{count} errors'
+  footer:
+    nav_links:
+      cookie_policy: 'Cookie Policy'
+      faq: 'FAQ'
+      privacy_policy: 'Privacy Policy'
+      terms_of_use: 'Terms of use'
+      contact_us: 'Contact us'
+      contact_requests: 'Contact requests'
+    copyright_text: 'provides tools that businesses use for Consumer Privacy Act Compliance.'
+  

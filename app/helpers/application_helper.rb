@@ -13,4 +13,8 @@ module ApplicationHelper
       flash_type.to_s
     end
   end
+
+  def flash_message_is_cookie_info(msg)
+    msg == t('flash.cookie')
+  end
 end

@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 2019_11_26_122800) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "contact_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name_encrypted"
+    t.string "email_address_encrypted"
+    t.string "telephone_encrypted"
+    t.text "comments"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
