@@ -16,7 +16,7 @@ class ContactRequestTest < ActiveSupport::TestCase
       @contact_request.save
     end
   end
-  
+
   test 'contact request with name longer than 20 characters is not created' do
     @contact_request.name = Faker::Internet.username(specifier: 21)
     assert_no_difference('ContactRequest.count') do
@@ -64,8 +64,11 @@ class ContactRequestTest < ActiveSupport::TestCase
     assert_equal contact_request.name, 'test'
     assert_equal contact_request.email_address, 'test@fma_template.com'
     assert_equal contact_request.telephone, '1234567890'
-    assert_equal contact_request.name_encrypted, 'TnWuM8xefxK7IBaNmlHkWA=='
-    assert_equal contact_request.email_address_encrypted, '3MbJcOwCDW4hbfiidmoBL9FBJZj7TCoibZse+iahh3E='
-    assert_equal contact_request.telephone_encrypted, 'oVMW0rQn1eF/PY4BwjVjHA=='
+    refute_equal 'test', contact_request.name_encrypted
+    # assert_equal contact_request.name_encrypted, 'TnWuM8xefxK7IBaNmlHkWA=='
+    refute_equal 'test@fma_template.com', contact_request.email_address_encrypted
+    # assert_equal contact_request.email_address_encrypted, '3MbJcOwCDW4hbfiidmoBL9FBJZj7TCoibZse+iahh3E='
+    refute_equal '1234567890', contact_request.telephone_encrypted
+    # assert_equal contact_request.telephone_encrypted, 'oVMW0rQn1eF/PY4BwjVjHA=='
   end
 end
