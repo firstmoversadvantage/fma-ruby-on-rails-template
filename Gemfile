@@ -5,20 +5,28 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
+
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
+
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+# gem 'puma', '~> 4.3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
+
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
+
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -61,5 +69,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Use this version of the gem until https://github.com/hashicorp/vault-rails/pull/76 is merged
 gem 'vault-rails', git: 'https://github.com/madding/vault-rails.git', branch: 'fix-dirty-changed-attributes'
 gem "aws-sdk-s3", require: false
+
 gem 'devise'
 gem 'devise-i18n'
