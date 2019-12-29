@@ -1,7 +1,8 @@
 pl:
+  ok: OK
   activerecord:
     attributes:
-      user: 
+      user:
         username: 'Nazwa użytkownika'
       contact_request:
         name: 'Imię'
@@ -19,7 +20,7 @@ pl:
               invalid: 'jest nieprawidłowe.'
               too_long: 'jest zbyt długie (maksimum 20 znaków).'
   flash:
-    cookie: "Ta strona używa plików cookie. Zobacz naszą <a href='/cookie-policy'>Politykę Cookie</a>, aby dowiedzieć się więcej."            
+    cookie: "Ta strona używa plików cookie. Zobacz naszą <a href='/cookie-policy'>Politykę Cookie</a>, aby dowiedzieć się więcej."
   helpers:
     label:
       contact_request:
@@ -46,7 +47,7 @@ pl:
     faq:
       title: 'FAQ'
       paragraph: "Znajdziesz mnie w app/views/public/faq.pl.html.erb"
-    contact_us: 
+    contact_us:
       title: 'Skontaktuj się z nami'
       flash:
         contact_request_saved: 'Prośba o kontakt została zapisana, skontaktujemy się z Tobą jak najszybciej.'
@@ -63,8 +64,8 @@ pl:
           telephone: 'Telefon'
           comments: 'Wiadomość'
           created_at: 'Dodano'
-  site_title: "FmaRubyOnRailsSzablon"
-  error: 
+  site_title: "FMA Ruby On Rails Szablon"
+  error:
     one: '%{count} błąd'
     other: '%{count} błędy'
   footer:
@@ -76,4 +77,3 @@ pl:
       contact_us: 'Kontakt'
       contact_requests: 'Prośby o kontakt'
     copyright_text: 'dostarcza narzędzi, których biznes używa do zgodności z ustawą o ochronie prywatności konsumentów (ang. CCPA).'
-

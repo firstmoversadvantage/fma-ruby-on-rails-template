@@ -1,15 +1,17 @@
 class PublicController < ApplicationController
-  before_action :check_if_saw_cookie_notice
-
   def index
+  end
+
+  def cookie_policy
+    @title = t('public.cookie_policy.title')
+  end
+
+  def do_not_sell_my_personal_information
+    #
   end
 
   def faq
     @title = t('public.faq.title')
-  end
-
-  def disclosure_ccpa
-    @title = t('public.ccpa.title')
   end
 
   def terms_of_use
@@ -20,14 +22,8 @@ class PublicController < ApplicationController
     @title = t('public.privacy_policy.title')
   end
 
-  def check_if_saw_cookie_notice
-    unless cookies[:saw_cookie_notice]
-      flash[:info] = t('flash.cookie').html_safe
-    end
-  end
-
-  def cookie_policy
-    @title = t('public.cookie_policy.title')
+  def privacy_policy_california
+    @title = t('public.privacy_policy.title')
   end
 
   def contact_us
@@ -43,12 +39,6 @@ class PublicController < ApplicationController
       @contact_request = ContactRequest.new
     end
     @title = t('public.contact_us.title')
-  end
-
-  def saw_cookie_notice
-    cookies[:saw_cookie_notice] = true
-    flash.delete(:info)
-    redirect_back(fallback_location: root_path)
   end
 
   private
