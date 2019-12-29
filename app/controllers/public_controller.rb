@@ -3,10 +3,10 @@ class PublicController < ApplicationController
 
   def index
   end
-  
+
   def faq
     @title = t('public.faq.title')
-  end 
+  end
 
   def disclosure_ccpa
     @title = t('public.ccpa.title')
@@ -33,7 +33,7 @@ class PublicController < ApplicationController
   def contact_us
     if request.post?
       @contact_request = ContactRequest.new(contact_us_params)
-      if verify_hcaptcha(model: @contact_request) && @contact_request.save
+      if @contact_request.save
         flash[:notice] = t('public.contact_us.flash.contact_request_saved')
         send_email_to_admins_about_new_request
       else
