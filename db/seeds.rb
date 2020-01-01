@@ -10,7 +10,7 @@ if Rails.env.development?
   User.delete_all
   bl = User.create(
     username: 'brianlong',
-    email: 'brian.long@fmadata.com',
+    email: 'brian.long@FMAprivacy.com',
     is_admin: true,
     password: 'Password1',
     password_confirmation: 'Password1'
