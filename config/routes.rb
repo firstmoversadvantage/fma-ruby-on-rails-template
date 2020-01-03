@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get 'public/index'
   match 'contact-us', to: 'public#contact_us', via: [:get, :post]
 
-  get 'contact_requests', to: 'contact_requests#index'
+  get 'contact-requests', to: 'contact_requests#index'
   get 'cookie-policy', to: 'public#cookie_policy'
   get '/do-not-sell-my-personal-information/',
       to: 'public#do_not_sell_my_personal_information',
