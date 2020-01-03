@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_174225) do
+ActiveRecord::Schema.define(version: 2019_12_22_211123) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name", null: false
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 2019_11_29_174225) do
     t.text "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ip_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.string "value_encrypted"
+    t.bigint "ip_address_trackable_id"
+    t.string "ip_address_trackable_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ip_address_trackable_type", "ip_address_trackable_id"], name: "ip_address_trackable_index"
   end
 
   create_table "privacy_request_tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
