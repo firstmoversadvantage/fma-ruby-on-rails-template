@@ -13,6 +13,7 @@ ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 set :deploy_to, "/home/deploy/#{fetch(:application)}"
 
 set :migration_role, :app
+set :templated_config_files, []
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -28,7 +29,7 @@ set :pty, false
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml"
 append :linked_files, "config/master.key"
-# append :linked_files, "config/credentials.yml.enc"
+append :linked_files, "config/credentials.yml.enc"
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
