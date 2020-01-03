@@ -1,6 +1,6 @@
 ## Ruby version
 
-  This project requires Ruby 2.6.5 as denoted in the `.ruby-version` file. This project also requires Rails 6.0. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
+  This project requires Ruby 2.6.3 as denoted in the `.ruby-version` file. This project also requires Rails 6.0. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
 
 ## System dependencies
 
