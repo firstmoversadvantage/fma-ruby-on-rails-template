@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# ruby '2.6.3'
+ruby '2.6.3'
 gem 'bundler', '>= 2.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0'
@@ -71,7 +71,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use this version of the gem until https://github.com/hashicorp/vault-rails/pull/76 is merged
-gem 'vault-rails', git: 'https://github.com/madding/vault-rails.git', branch: 'fix-dirty-changed-attributes'
+gem 'vault-rails',
+    git: 'https://github.com/madding/vault-rails.git',
+    branch: 'fix-dirty-changed-attributes'
 gem "aws-sdk-s3", require: false
 
 gem 'devise'
