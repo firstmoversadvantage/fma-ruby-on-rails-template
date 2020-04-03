@@ -40,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string    :email_encrypted
       t.string    :email_hash
 
-      # These can be removed if you are using Vault:
+      # This can be removed if you are using Vault:
       t.string    :email_encrypted_iv
     end
 

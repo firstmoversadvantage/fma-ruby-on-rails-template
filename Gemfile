@@ -81,9 +81,8 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Use this gem for attr_encrypted:
 gem 'attr_encrypted', '>= 3.1.0'
 
-# Or use this for Vault
-# Use this version of the gem until
-# https://github.com/hashicorp/vault-rails/pull/76 is merged
+# Or use this for Vault. NOTE: Use this version of the gem until
+# https://github.com/hashicorp/vault-rails/pull/76 is merged:
 # gem 'vault-rails',
 #     git: 'https://github.com/madding/vault-rails.git',
 #     branch: 'fix-dirty-changed-attributes'
