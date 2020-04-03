@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 gem 'bundler', '>= 2.1'
 
-gem "actionview", ">= 6.0.2.2"
+gem 'actionview', '>= 6.0.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0'
@@ -40,25 +40,25 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # Capistrano
-gem 'capistrano-rails', group: :development
 gem 'capistrano-passenger'
+gem 'capistrano-rails', group: :development
 # gem 'capistrano-sidekiq',  require: false
 
 group :development, :test do
-  gem 'rubocop'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry', '~> 0.12.2'
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+  gem 'pry', '~> 0.12.2'
+  gem 'rubocop'
 end
 
 group :development do
-
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Access an interactive console on exception pages or by calling 'console'
+  # anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+  # Spring speeds up development by keeping your application running in the
+  # background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
@@ -72,13 +72,24 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-# Use this version of the gem until https://github.com/hashicorp/vault-rails/pull/76 is merged
-gem 'vault-rails',
-    git: 'https://github.com/madding/vault-rails.git',
-    branch: 'fix-dirty-changed-attributes'
-gem "aws-sdk-s3", require: false
+# NOTE: This template allows you to choose between encryption with the
+# `attr_encrypted` gem or Vault. Vault is more secure but is harder to configure
+# in production.
+#
+# Use this gem for attr_encrypted:
+gem 'attr_encrypted', '>= 3.1.0'
+
+# Or use this for Vault
+# Use this version of the gem until
+# https://github.com/hashicorp/vault-rails/pull/76 is merged
+# gem 'vault-rails',
+#     git: 'https://github.com/madding/vault-rails.git',
+#     branch: 'fix-dirty-changed-attributes'
+
+# For asset storage
+gem 'aws-sdk-s3', require: false
 
 gem 'devise'
 gem 'devise-i18n'

@@ -37,12 +37,18 @@ project please come back here and update the documentation!
 
   Run rake db:setup to create and migrate the database from schema (db/schema.rb).
 
+## Attribute Encryption
+Attribute encryption on models is required for any attribute that contains personal information or other sensitive data. The default solution is the attr_encrypted gem. A more secure alternative is Vault.
+
 ## Vault
-Vault is a key component to this project. We mostly are using its Encryption As A Service feature. This functionality is wrapped by the vault-rails gem.
+Vault is an optional component to this project. We mostly are using its Encryption As A Service feature. This functionality is wrapped by the vault-rails gem.
 
 Please note that we currently are using a forked version of the Gem until Rails 5.2 is supported in the native gem. See this PR for details.
 
 In the test and development modes you do not need an actual Vault server running. The gem will intercept and perform all encryption that would normally by done by the Vault encryption server.
+
+To use Vault, search the project for 'vault' and read the comments.
+
 ## How to run the test suite
 
   `rails test` # run all tests
