@@ -6,7 +6,7 @@ class UserTest < ActiveSupport::TestCase
       username: 'test',
       email: 'test@test.com',
       password: 'password'
-     }
+    }
   end
 
   test 'correctly creates user with username, encrypts email, creates hash' do
@@ -17,7 +17,6 @@ class UserTest < ActiveSupport::TestCase
     user = User.find_by(username: 'test')
     assert_equal user.username, 'test'
     refute_equal @user_params[:email], user.email_encrypted
-    # assert_equal user.email_encrypted, '2Vt/b0vDKcerRISbXQAsYg=='
     assert_equal user.email_hash, Digest::SHA256.hexdigest(@user_params[:email])
   end
 
