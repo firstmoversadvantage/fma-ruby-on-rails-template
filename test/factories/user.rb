@@ -1,17 +1,17 @@
 # We use factory for users due to error in loading fixtures
-# because we do not have email field in database. 
+# because we do not have email field in database.
 # Instead we use virtual email attribute, check the model.
 FactoryBot.define do
   factory :user do
     username { Faker::Internet.username }
-    email  { "adminone@fmatemplate.com" }
-    password  { "password123" }
+    email { 'adminone@fmatemplate.com' }
+    password { 'Password123' }
     is_admin { false }
     confirmed_at { Time.now }
 
     trait :admin do
       username { Faker::Internet.username }
-      email  { "adminone@fmatemplate.com" }
+      email { 'adminone@fmatemplate.com' }
       is_admin { true }
     end
   end
