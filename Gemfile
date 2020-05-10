@@ -28,7 +28,15 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
+
+# This is for the free version of Sidekiq.
+gem 'sidekiq'
+
+# Use this for SideKiq Pro if you have our keys keys
+# source 'https://gems.contribsys.com/' do
+#   gem 'sidekiq-pro'
+# end
 
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -42,7 +50,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Capistrano
 gem 'capistrano-passenger'
 gem 'capistrano-rails', group: :development
-# gem 'capistrano-sidekiq',  require: false
+gem 'capistrano-sidekiq',  require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

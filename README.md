@@ -21,6 +21,7 @@ This project requires Ruby 2.6.5 as denoted in the `.ruby-version` file. This pr
 
 ## System dependencies
   - MySQL 5.7+
+  - Redis
   - Yarn
 
 ## Configuration
