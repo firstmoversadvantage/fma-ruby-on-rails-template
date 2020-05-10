@@ -1,0 +1,11 @@
+Post-install message from attr_encrypted:
+
+
+
+WARNING: Several insecure default options and features were deprecated in attr_encrypted v2.0.0.
+
+Additionally, there was a bug in Encryptor v2.0.0 that insecurely encrypted data when using an AES-*-GCM algorithm.
+
+This bug was fixed but introduced breaking changes between v2.x and v3.x.
+
+Please see the README for more information regarding upgrading to attr_encrypted v3.0.0.
