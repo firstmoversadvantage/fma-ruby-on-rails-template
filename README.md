@@ -54,7 +54,7 @@ In the test and development modes you do not need an actual Vault server running
 To use Vault, search the project for 'vault' and read the comments.
 
 ## How to run the test suite
- `rails test` # run all tests
+  `rails test` # run all tests
   `rails test test/models` # run all tests from specific directory
   `rails test test/models/article_test.rb` # run all tests from specific file
   `rails test test/models/article_test.rb:6` # run specific test and line
