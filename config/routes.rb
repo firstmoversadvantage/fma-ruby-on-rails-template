@@ -1,5 +1,23 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # Free Sidekiq
+  if Gem.loaded_specs.key? 'sidekiq'
+    require 'sidekiq'
+    require 'sidekiq/web'
+  end
+
+  # Sidekiq Pro
+  if Gem.loaded_specs.key? 'sidekiq-pro'
+    require 'sidekiq-pro'
+    require 'sidekiq/pro/web'
+  end
+
+  # Only admins can see the Sidekiq Dashboard
+  authenticate :user, lambda { |u| u.is_admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
   # Public Controller
   # get 'public/index'
   match 'contact-us', to: 'public#contact_us', via: [:get, :post]

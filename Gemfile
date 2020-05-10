@@ -33,7 +33,7 @@ gem 'redis', '~> 4.0'
 # This is for the free version of Sidekiq.
 gem 'sidekiq'
 
-# Use this for SideKiq Pro if you have our keys keys
+# Use this for SideKiq Pro if you have our production keys
 # source 'https://gems.contribsys.com/' do
 #   gem 'sidekiq-pro'
 # end
