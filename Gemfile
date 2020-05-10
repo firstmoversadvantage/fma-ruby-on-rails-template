@@ -72,11 +72,11 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # NOTE: This template allows you to choose between encryption with the
-# `attr_encrypted` gem or Vault. Vault is more secure but is harder to configure
-# in production.
+# `attr_encrypted` gem or Vault. Vault is more secure but is harder to
+# configure in production.
 #
 # Use this gem for attr_encrypted:
 gem 'attr_encrypted', '>= 3.1.0'
