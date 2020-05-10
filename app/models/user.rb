@@ -9,9 +9,11 @@ class User < ApplicationRecord
          authentication_keys: [:username]
 
   # For attr_encrypted:
-  attr_encrypted_options.merge!(prefix: '', suffix: '_encrypted')
-  attr_encrypted :email,
-                 key: Rails.application.credentials.attribute_key
+  attr_encrypted_options.merge!(
+    key: Rails.application.credentials.attribute_key,
+    prefix: '',
+    suffix: '_encrypted')
+  attr_encrypted :email
 
   # For Vault:
   # attr_accessor :email

@@ -37,10 +37,11 @@ ActiveRecord::Schema.define(version: 2019_11_26_122800) do
     t.string "name_encrypted"
     t.string "email_address_encrypted"
     t.string "telephone_encrypted"
+    t.text "comments_encrypted"
     t.string "name_encrypted_iv"
     t.string "email_address_encrypted_iv"
     t.string "telephone_encrypted_iv"
-    t.text "comments"
+    t.string "comments_encrypted_iv"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email_address_encrypted_iv"], name: "index_contact_requests_on_email_address_encrypted_iv", unique: true

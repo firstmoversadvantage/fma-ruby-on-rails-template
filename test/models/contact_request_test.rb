@@ -60,16 +60,19 @@ class ContactRequestTest < ActiveSupport::TestCase
     contact_request = ContactRequest.create(
       name: 'test',
       email_address: 'test@fma_template.com',
-      telephone: '1234567890'
+      telephone: '1234567890',
+      comments: 'TEST COMMENT'
     )
     contact_request.reload
 
-    assert_equal contact_request.name, 'test'
-    assert_equal contact_request.email_address, 'test@fma_template.com'
-    assert_equal contact_request.telephone, '1234567890'
+    assert_equal 'test', contact_request.name
+    assert_equal 'test@fma_template.com', contact_request.email_address
+    assert_equal '1234567890', contact_request.telephone
+    assert_equal 'TEST COMMENT', contact_request.comments
     refute_equal 'test', contact_request.name_encrypted
     refute_equal 'test@fma_template.com',
                  contact_request.email_address_encrypted
     refute_equal '1234567890', contact_request.telephone_encrypted
+    refute_equal 'TEST COMMENT', contact_request.comments_encrypted
   end
 end
