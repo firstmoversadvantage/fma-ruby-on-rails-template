@@ -13,6 +13,8 @@ This repo is a template to be used for creating new projects. After creating you
 - You will also need to go through the views to remove/change some of the
   current boiler plate. This template was originally created for FMAprivacy, so
   the privacy policies, etc. will require some changes.
+- This template is configured for the free version of Sidekiq. Review the
+  Gemfile and config/routes.rb files if you are using Sidekiq Pro.
 
 NOTE: If you find other files that need to be touched after creating a new project please come back here and update the documentation!
 

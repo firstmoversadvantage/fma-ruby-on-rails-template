@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   end
 
   # Sidekiq Pro
-  if Gem.loaded_specs.key? 'sidekiq-pro'
-    require 'sidekiq-pro'
-    require 'sidekiq/pro/web'
-  end
+  # if Gem.loaded_specs.key? 'sidekiq-pro'
+  #   require 'sidekiq-pro'
+  #   require 'sidekiq/pro/web'
+  # end
 
   # Only admins can see the Sidekiq Dashboard
   authenticate :user, lambda { |u| u.is_admin? } do
