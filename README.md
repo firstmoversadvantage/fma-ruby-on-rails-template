@@ -34,6 +34,7 @@ To open e.g. in atom, use `EDITOR="atom --wait" rails credentials:edit`
 To open in vim, make sure it's up to date and use `EDITOR=vim rails credentials:edit`
 
 Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users).
+
 ## Database creation
 
 MySQL 5.7 is the recommended version to run on your machine. Once you have MySQL running, run:
@@ -64,8 +65,10 @@ To use Vault, search the project for 'vault' and read the comments.
 If you see errors related to yarn, try `yarn upgrade` and `yarn install`
 
 ## Services (job queues, cache servers, search engines, etc.)
+  - Sidekiq
 
 ## Deployment instructions
+Follow the instructions for Capistrano
 
 ### Testing
 Please use `User` factory when you need users, more info in 'test/factories/user.rb'
