@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   devise_for :users
 
@@ -14,13 +16,13 @@ Rails.application.routes.draw do
   # end
 
   # Only admins can see the Sidekiq Dashboard
-  authenticate :user, lambda { |u| u.is_admin? } do
+  authenticate :user, ->(u) { u.is_admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
 
   # Public Controller
   # get 'public/index'
-  match 'contact-us', to: 'public#contact_us', via: [:get, :post]
+  match 'contact-us', to: 'public#contact_us', via: %i[get post]
 
   get 'contact-requests', to: 'contact_requests#index'
   get 'cookie-policy', to: 'public#cookie_policy'

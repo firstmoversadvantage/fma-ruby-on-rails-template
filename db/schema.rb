@@ -44,9 +44,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_122800) do
     t.string "comments_encrypted_iv"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email_address_encrypted_iv"], name: "index_contact_requests_on_email_address_encrypted_iv", unique: true
-    t.index ["name_encrypted_iv"], name: "index_contact_requests_on_name_encrypted_iv", unique: true
-    t.index ["telephone_encrypted_iv"], name: "index_contact_requests_on_telephone_encrypted_iv", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

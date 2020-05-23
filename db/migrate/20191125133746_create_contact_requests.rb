@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateContactRequests < ActiveRecord::Migration[6.0]
   def change
     create_table :contact_requests do |t|
@@ -14,8 +16,5 @@ class CreateContactRequests < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    add_index :contact_requests, :name_encrypted_iv, unique: true
-    add_index :contact_requests, :email_address_encrypted_iv, unique: true
-    add_index :contact_requests, :telephone_encrypted_iv, unique: true
   end
 end

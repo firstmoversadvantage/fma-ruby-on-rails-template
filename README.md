@@ -6,6 +6,7 @@ This repo is a template to be used for creating new projects. After creating you
   credentials files. See config/credentials.example.yml for some of the
   environment variables that you should copy to config/credentials.yml.enc
 - config/database.yml to reflect the proper database name and other settings.
+  There is an example in `config/database.example.yml`
 - Look at `config/initializers/site_information.rb` and make changes as needed
   to the constant values shown there.
 - Perform a 'find all' to look for 'fmaprivacy' and 'fmadata'. Modify those
@@ -27,7 +28,7 @@ This project requires Ruby 2.6.5 as denoted in the `.ruby-version` file. This pr
   - Yarn
 
 ## Configuration
-Ask someone in charge about `master.key`
+Ask someone in charge about the development `master.key`
 
 To open e.g. in atom, use `EDITOR="atom --wait" rails credentials:edit`
 
@@ -50,7 +51,7 @@ Attribute encryption on models is required for any attribute that contains perso
 ## Vault
 Vault is an optional component to this project. We mostly are using its Encryption As A Service feature. This functionality is wrapped by the vault-rails gem.
 
-Please note that we currently are using a forked version of the Gem until Rails 5.2 is supported in the native gem. See this PR for details.
+Please note that we currently are using a forked version of the Gem until Rails 5.2+ is supported in the native gem. See this PR for details.
 
 In the test and development modes you do not need an actual Vault server running. The gem will intercept and perform all encryption that would normally by done by the Vault encryption server.
 

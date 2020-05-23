@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.5'
+ruby '2.7.0'
 gem 'bundler', '>= 2.1'
+gem 'json', '>= 2.3.0'
 
-gem 'actionview', '>= 6.0.2.2'
+gem 'actionview', '>= 6.0.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0'
@@ -12,8 +15,8 @@ gem 'rails', '~> 6.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.5.3'
 
-# Use Puma as the app server
-# gem 'puma', '~> 4.3'
+# Use Passenger as the app server
+# gem 'passenger'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
@@ -50,7 +53,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Capistrano
 gem 'capistrano-passenger'
 gem 'capistrano-rails', group: :development
-gem 'capistrano-sidekiq',  require: false
+gem 'capistrano-sidekiq', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

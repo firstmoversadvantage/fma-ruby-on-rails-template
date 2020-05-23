@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 ADMIN_EMAIL = ''
 ADMIN_SITE = ''
-COMPANY_AKA = 'FMAtemplate'
+COMPANY_AKA = 'FMAdata'
 FMA = 'First Movers Advantage'
 FMA_LLC = 'First Movers Advantage, LLC'
 OUR_CITY_STATE_ZIP = 'Boulder, CO 80302-3812'
