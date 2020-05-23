@@ -1,5 +1,6 @@
 ## Template Notes
 This repo is a template to be used for creating new projects. After creating your new project, you will need to touch some files to customize the new environment. Those files are:
+- .ruby-gemset to create a gemset for your new app.
 - config/deploy/* to provide the host names for each deployment target.
 - config/deploy.rb to update the project name & other deployment settings.
 - Run `EDITOR=vim rails credentials:edit` to initialize the Rails encrypted
@@ -20,7 +21,7 @@ This repo is a template to be used for creating new projects. After creating you
 NOTE: If you find other files that need to be touched after creating a new project please come back here and update the documentation!
 
 ## Ruby version
-This project requires Ruby 2.7+ as denoted in the `.ruby-version` file. This project also requires Rails 6.0+. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
+This project requires Ruby 2.7+ as denoted in the `.ruby-version` file. Remember to create & configure `.ruby-gemset` to hold the gems for your new app. This project also requires Rails 6.0+. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
 
 ## System dependencies
   - MySQL 5.7+
