@@ -17,6 +17,8 @@ This repo is a template to be used for creating new projects. After creating you
   the privacy policies, etc. will require some changes.
 - This template is configured for the free version of Sidekiq. Review the
   Gemfile and config/routes.rb files if you are using Sidekiq Pro.
+- Change the name of the application in `config/application.rb`. Change
+  FMAdataTemplate to something meaningful.
 
 NOTE: If you find other files that need to be touched after creating a new project please come back here and update the documentation!
 
