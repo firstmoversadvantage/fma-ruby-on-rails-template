@@ -13,8 +13,7 @@ This repo is a template to be used for creating new projects. After creating you
 - Perform a 'find all' to look for 'fmaprivacy' and 'fmadata'. Modify those
   values as needed.
 - You will also need to go through the views to remove/change some of the
-  current boiler plate. This template was originally created for FMAprivacy, so
-  the privacy policies, etc. will require some changes.
+  current boiler plate, logo, etc.
 - This template is configured for the free version of Sidekiq. Review the
   Gemfile and config/routes.rb files if you are using Sidekiq Pro.
 - Change the name of the application in `config/application.rb`. Change
@@ -23,7 +22,7 @@ This repo is a template to be used for creating new projects. After creating you
 NOTE: If you find other files that need to be touched after creating a new project please come back here and update the documentation!
 
 ## Ruby version
-This project requires Ruby 2.7+ as denoted in the `.ruby-version` file. Remember to create & configure `.ruby-gemset` to hold the gems for your new app. This project also requires Rails 6.0+. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
+This project requires Ruby 2.6.5+ as denoted in the `.ruby-version` file. Remember to create & configure `.ruby-gemset` to hold the gems for your new app. This project also requires Rails 6.0+. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
 
 ## System dependencies
   - MySQL 5.7+
@@ -66,10 +65,10 @@ To use Vault, search the project for 'vault' and read the comments.
   `rails test test/models/article_test.rb` # run all tests from specific file
   `rails test test/models/article_test.rb:6` # run specific test and line
 
-If you see errors related to yarn, try `yarn upgrade` and `yarn install`
+If you see errors related to yarn or webpacker, try `yarn upgrade` and `yarn install`
 
 ## Services (job queues, cache servers, search engines, etc.)
-  - Sidekiq
+  - Sidekiq (uses Redis DB)
 
 ## Deployment instructions
 Follow the instructions for Capistrano

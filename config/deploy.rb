@@ -27,13 +27,12 @@ set :templated_config_files, []
 
 # Default value for :pty is false
 # set :pty, true
-set :pty, false
 
 # Default value for :linked_files is []
 append :linked_files, 'config/database.yml'
 append :linked_files, 'config/master.key'
 append :linked_files, 'config/credentials.yml.enc'
-# append :linked_files, 'config/sidekiq.yml'
+append :linked_files, 'config/sidekiq.yml'
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets",
@@ -51,37 +50,37 @@ set :passenger_environment_variables,
     { path: '/usr/sbin/passenger-status:$PATH' }
 # set :passenger_restart_with_touch, true
 
-## SIDEKIQ CONFIG
-# set :sidekiq_role, :app
-# set :sidekiq_config, File.join(current_path, 'config', 'sidekiq.yml').to_s
-#
-# namespace :sidekiq do
-#   desc 'Stop sidekiq (graceful shutdown, put unfinished tasks back to Redis)'
-#   task :stop do
-#     on roles :all do |_role|
-#       execute :systemctl, '--user', 'stop', :sidekiq
-#     end
-#   end
-#
-#   desc 'Start sidekiq'
-#   task :start do
-#     on roles :all do |_role|
-#       execute :systemctl, '--user', 'start', :sidekiq
-#     end
-#   end
-#
-#   desc 'Restart sidekiq'
-#   task :restart do
-#     on roles(:all), in: :sequence, wait: 5 do
-#       execute :systemctl, '--user', 'restart', :sidekiq
-#     end
-#   end
-# end
-#
-# namespace :deploy do
-#   after :finishing, 'deploy:restart', 'deploy:cleanup'
-#   after :restart, 'sidekiq:restart'
-# end
+# SIDEKIQ CONFIG
+set :sidekiq_role, :app
+set :sidekiq_config, File.join(current_path, 'config', 'sidekiq.yml').to_s
+
+namespace :sidekiq do
+  desc 'Stop sidekiq (graceful shutdown, put unfinished tasks back to Redis)'
+  task :stop do
+    on roles :all do |_role|
+      execute :systemctl, '--user', 'stop', :sidekiq
+    end
+  end
+
+  desc 'Start sidekiq'
+  task :start do
+    on roles :all do |_role|
+      execute :systemctl, '--user', 'start', :sidekiq
+    end
+  end
+
+  desc 'Restart sidekiq'
+  task :restart do
+    on roles(:all), in: :sequence, wait: 5 do
+      execute :systemctl, '--user', 'restart', :sidekiq
+    end
+  end
+end
+
+namespace :deploy do
+  after :finishing, 'deploy:restart', 'deploy:cleanup'
+  after :restart, 'sidekiq:restart'
+end
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -92,5 +91,6 @@ set :passenger_environment_variables,
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-# Uncomment the following to require manually verifying the host key before first deploy.
+# Uncomment the following to require manually verifying the host key before
+# first deploy.
 # set :ssh_options, verify_host_key: :secure

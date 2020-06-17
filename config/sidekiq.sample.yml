@@ -1,0 +1,11 @@
+---
+:concurrency: 5
+# :daemon: false
+# :timeout: 30
+# :verbose: true
+# production:
+#   :concurrency: 4
+:queues:
+  - high_priority
+  - default
+  - low_priority
