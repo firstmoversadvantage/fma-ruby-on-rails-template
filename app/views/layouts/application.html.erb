@@ -28,7 +28,7 @@
   <body>
      <!-- fixed-width container -->
     <div class="container">
-      <div class="header">
+      <header class="header">
 
         <a href="<%= root_path %>">
           <%= image_tag 'fmaprivacy_logo_50.png', alt: t('home_page_link'), title: t('home_page') %>
@@ -54,13 +54,13 @@
             <% end %>
           <% end %>
         </span>
-      </div>
+      </header>
     </div>
 
-    <div class='container body-main'>
+    <main class='container body-main'>
       <%= render 'layouts/flash' %>
       <%= yield %>
-    </div>
+    </main>
 
     <footer class="footer">
       <div class="container">
