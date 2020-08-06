@@ -38,6 +38,8 @@ To open in vim, make sure it's up to date and use `EDITOR=vim rails credentials:
 
 Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users).
 
+See configuration examples in config/credentials.example.yml.
+
 ## Database creation
 
 MySQL 5.7 is the recommended version to run on your machine. Once you have MySQL running, run:
