@@ -35,10 +35,17 @@
         </a>
         <span class="float-right">
           <% if user_signed_in? %>
+          <%= link_to edit_user_registration_path do %>
+              <i class="fas fa-user-edit"
+                 alt="Edit Account Link"
+                 title="Sign Up"></i>
+            <% end %>
+            &nbsp;|&nbsp;
             <%= link_to destroy_user_session_path, method: :delete do %>
               <i class="fas fa-sign-out-alt sign-in-out"
                  alt="Sign Out Link"
-                 title="Sign Out"></i>
+                 title="Sign Out">
+              </i>
             <% end %>
           <% else %>
             <%= link_to new_user_session_path do %>
