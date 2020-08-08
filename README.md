@@ -32,9 +32,11 @@ This project requires Ruby 2.6.5+ as denoted in the `.ruby-version` file. Rememb
 ## Configuration
 Ask someone in charge about the development `master.key`
 
-To open e.g. in atom, use `EDITOR="atom --wait" rails credentials:edit`
+To generate credentials, run:
+  - in atom, use `EDITOR="atom --wait" rails credentials:edit`
+  - in vim, make sure it's up to date and use `EDITOR=vim rails credentials:edit`
 
-To open in vim, make sure it's up to date and use `EDITOR=vim rails credentials:edit`
+Enter your keys, save and exit. See config/credentials.example.yml for examples.
 
 Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users).
 
