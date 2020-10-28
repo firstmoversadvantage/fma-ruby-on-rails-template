@@ -64,6 +64,9 @@ pl:
           telephone: 'Telefon'
           comments: 'Wiadomość'
           created_at: 'Dodano'
+    not_found:
+      heading: "Strona, której szukasz nie istnieje."
+      not_found_message: "Wybacz, nie tym razem... W adresie strony znajduje się błąd lub strona została przeniesiona. Idź do "
   site_title: "FMA Ruby On Rails Szablon"
   error:
     one: '%{count} błąd'

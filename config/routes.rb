@@ -37,4 +37,6 @@ Rails.application.routes.draw do
 
   # Default root path
   root to: 'public#index'
+
+  match '*path', via: :all, to: 'public#not_found'
 end

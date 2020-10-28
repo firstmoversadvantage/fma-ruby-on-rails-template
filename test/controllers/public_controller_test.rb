@@ -9,7 +9,6 @@ class PublicControllerTest < ActionDispatch::IntegrationTest
         telephone: '123456789'
       }
     }
-
     @admin_one = create(:user, :admin)
   end
 
@@ -102,5 +101,12 @@ class PublicControllerTest < ActionDispatch::IntegrationTest
     assert_difference('ActionMailer::Base.deliveries.count') do
       post contact_us_url, params: @contact_us_params
     end
+  end
+
+  test "wrong path renders not_found" do
+    heading = "<h1>The page you&#39;re looking for does not exist.</h1>\n"
+    get '/i_do_not_exist'
+    assert_response 404
+    assert_includes response.body, heading
   end
 end

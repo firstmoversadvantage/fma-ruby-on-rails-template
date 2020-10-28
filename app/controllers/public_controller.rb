@@ -41,6 +41,10 @@ class PublicController < ApplicationController
     @title = t('public.contact_us.title')
   end
 
+  def not_found
+    render :not_found, status: :not_found, layout: 'error_page'
+  end
+
   private
   def contact_us_params
     params.require(:contact_request)
