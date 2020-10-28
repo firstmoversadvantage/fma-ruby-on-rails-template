@@ -61,6 +61,11 @@ In the test and development modes you do not need an actual Vault server running
 
 To use Vault, search the project for 'vault' and read the comments.
 
+## S3
+To store assets on s3, use `EDITOR="atom --wait" rails credentials:edit` to enter amazon credentials. See examples in config/credentials.example.yml.
+By default, images are stored locally for development and test environments, and on s3 in production environment (look for `config.active_storage.service` to change it).
+See comments in credentials.example.yml and storage.yml for more details.
+
 ## How to run the test suite
   `rails test` # run all tests
   `rails test test/models` # run all tests from specific directory
