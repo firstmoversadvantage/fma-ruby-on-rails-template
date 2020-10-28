@@ -1,0 +1,13 @@
+<div class="error-body">
+  <div class="background">
+    <div class="content">
+      <h1><%= t('public.not_found.heading') %></h1>
+      <p class="not-found-message">
+        <%= t('public.not_found.not_found_message') %><%= link_to "Home page", root_path %>
+      </p>
+      <%= link_to root_path do %>
+        <%= image_tag("https://www-movingleads-com-production.s3.amazonaws.com/fmadata-logo_1.png") %>
+      <% end %>
+    </div>
+  </div>
+</div>

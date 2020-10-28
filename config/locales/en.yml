@@ -73,6 +73,9 @@ en:
           telephone: 'Telephone'
           comments: 'Message'
           created_at: 'Created at'
+    not_found:
+      heading: "The page you're looking for does not exist."
+      not_found_message: "Sorry, not this time... You may have mistyped the address or the page may have moved. Go to the "
   site_title: "FMA Ruby On Rails Template"
   error:
     one: '%{count} error'
