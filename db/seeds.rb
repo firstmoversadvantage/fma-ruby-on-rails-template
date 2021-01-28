@@ -15,5 +15,5 @@ if Rails.env.development?
     password: 'password',
     password_confirmation: 'password'
   )
-  bl.confirm
+  admin.confirm
 end
