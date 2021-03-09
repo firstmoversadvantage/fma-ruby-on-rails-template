@@ -18,15 +18,14 @@ class SidekiqControllerTest < ActionDispatch::IntegrationTest
   test 'regular user should get redirected' do
     sign_in @user_one
     assert_equal '/users/sign_in', new_user_session_path
-    assert_raises ActionController::RoutingError do
-      get sidekiq_web_path
-    end
+    get sidekiq_web_path
+    assert_response :not_found
   end
 
   # Admins can see Sidekiq Dashboard
   test 'the_truth' do
     sign_in @admin_one
     get sidekiq_web_path
-    assert :success
+    assert_response :success
   end
 end
