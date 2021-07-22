@@ -1,0 +1,68 @@
+# Ruby 3.0.2
+
+Post-install message from encryptor:
+
+Please be aware that Encryptor v2.0.0 had a major security bug when using AES-*-GCM algorithms.
+
+By default You will not be able to decrypt data that was previously encrypted using an AES-*-GCM algorithm.
+
+Please see the README and https://github.com/attr-encrypted/encryptor/pull/22 for more information.
+
+
+Post-install message from attr_encrypted:
+
+WARNING: Several insecure default options and features were deprecated in attr_encrypted v2.0.0.
+
+Additionally, there was a bug in Encryptor v2.0.0 that insecurely encrypted data when using an AES-*-GCM algorithm.
+
+This bug was fixed but introduced breaking changes between v2.x and v3.x.
+
+Please see the README for more information regarding upgrading to attr_encrypted v3.0.0.
+
+
+Post-install message from capistrano-passenger:
+==== Release notes for capistrano-passenger ====
+passenger once had only one way to restart: `touch tmp/restart.txt`
+Beginning with passenger v4.0.33, a new way was introduced: `passenger-config restart-app`
+
+The new way to restart was not initially practical for everyone,
+since for versions of passenger prior to v5.0.10,
+it required your deployment user to have sudo access for some server configurations.
+
+capistrano-passenger gives you the flexibility to choose your restart approach, or to rely on reasonable defaults.
+
+If you want to restart using `touch tmp/restart.txt`, add this to your config/deploy.rb:
+
+    set :passenger_restart_with_touch, true
+
+If you want to restart using `passenger-config restart-app`, add this to your config/deploy.rb:
+
+    set :passenger_restart_with_touch, false # Note that `nil` is NOT the same as `false` here
+
+If you don't set `:passenger_restart_with_touch`, capistrano-passenger will check what version of passenger you are running
+and use `passenger-config restart-app` if it is available in that version.
+
+If you are running passenger in standalone mode, it is possible for you to put passenger in your
+Gemfile and rely on capistrano-bundler to install it with the rest of your bundle.
+If you are installing passenger during your deployment AND you want to restart using `passenger-config restart-app`,
+you need to set `:passenger_in_gemfile` to `true` in your `config/deploy.rb`.
+================================================
+
+
+Post-install message from rubyzip:
+RubyZip 3.0 is coming!
+**********************
+
+The public API of some Rubyzip classes has been modernized to use named
+parameters for optional arguments. Please check your usage of the
+following classes:
+  * `Zip::File`
+  * `Zip::Entry`
+  * `Zip::InputStream`
+  * `Zip::OutputStream`
+
+Please ensure that your Gemfiles and .gemspecs are suitably restrictive
+to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
+See https://github.com/rubyzip/rubyzip for details. The Changelog also
+lists other enhancements and bugfixes that have been implemented since
+version 2.3.0.
