@@ -42,9 +42,11 @@ Set up locking strategy during configuration (https://github.com/plataformatec/d
 
 ## Database creation
 
-MySQL 5.7 is the recommended version to run on your machine. Once you have MySQL running, run:
+MySQL 8 is the recommended version to run on your machine. Once you have MySQL running, run:
   `cp config/database.example.yml config/database.yml`
 and configure your config/database.yml to your machine's MySQL configuration. Minor edits should only be necessary.
+
+NOTE: Please see doc/mysql_mac_os_notes.txt if you see test errors like `drb.rb:1259 run> terminated with exception (report_on_exception is true):`
 
 ## Database initialization
 Run rake db:setup to create and migrate the database from schema (db/schema.rb).

@@ -1,0 +1,17 @@
+Discussed in https://github.com/rails/rails/issues/41176
+
+There is a bug in the current version of the mysql2 gem that causes an error
+when running tests in parallel. If you see errors like
+`drb.rb:1259 run> terminated with exception (report_on_exception is true):`
+then try the following:
+
+Install the client libraries for MySQL 5.7 and reinstall the mysql2 gem using
+those libraries.
+
+```
+gem uninstall mysql2
+brew install mysql-client@5.7
+gem install mysql2 -- --with-mysql-dir="/usr/local/opt/mysql-client@5.7/"
+```
+
+You will probably need to kill the currently running instance of spring before the tests will pass.
