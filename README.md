@@ -22,10 +22,10 @@ This repo is a template to be used for creating new projects. After creating you
 NOTE: If you find other files that need to be touched after creating a new project please come back here and update the documentation!
 
 ## Ruby version
-This project requires Ruby 2.6.5+ as denoted in the `.ruby-version` file. Remember to create & configure `.ruby-gemset` to hold the gems for your new app. This project also requires Rails 6.0+. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
+This project requires Ruby 3.0+ as denoted in the `.ruby-version` file. Remember to create & configure `.ruby-gemset` to hold the gems for your new app. This project also requires Rails 6.1+. Run the `bundle` command to install Rails and all other Gem dependencies. See the Gemfile for additional notes.
 
 ## System dependencies
-  - MySQL 5.7+
+  - MySQL 8+
   - Redis
   - Yarn
 
@@ -42,9 +42,11 @@ Set up locking strategy during configuration (https://github.com/plataformatec/d
 
 ## Database creation
 
-MySQL 5.7 is the recommended version to run on your machine. Once you have MySQL running, run:
+MySQL 8 is the recommended version to run on your machine. Once you have MySQL running, run:
   `cp config/database.example.yml config/database.yml`
 and configure your config/database.yml to your machine's MySQL configuration. Minor edits should only be necessary.
+
+NOTE: Please see doc/mysql_mac_os_notes.txt if you see test errors like `drb.rb:1259 run> terminated with exception (report_on_exception is true):`
 
 ## Database initialization
 Run rake db:setup to create and migrate the database from schema (db/schema.rb).
