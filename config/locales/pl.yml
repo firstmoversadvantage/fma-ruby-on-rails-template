@@ -9,6 +9,15 @@ pl:
         email_address: 'Adres e-mail'
         telephone: 'Telefon'
         comments: 'Wiadomość'
+      opt_out_request:
+        name: 'Imię i nazwisko'
+        address: 'Adres'
+        street_address: 'Ulica'
+        city: 'Miasto'
+        postal_code: 'Kod pocztowy'
+        state: 'Region'
+        meta_data: 'Metadane'
+        request_type: 'Typ wniosku'
     errors:
       models:
         contact_request:
@@ -28,6 +37,14 @@ pl:
         email_address: 'Adres e-mail'
         telephone: 'Telefon'
         comments: 'Wiadomość'
+  opt_out_requests:
+    new:
+      title: 'Nowy wniosek'
+    index:
+      title: 'Wnioski o usunięcie danych'
+    form:
+      errors: 'uniemożliwił/y wysłanie wniosku.'
+      submit: 'Wyślij'
   public:
     index:
       title: "Public#index"
@@ -80,3 +97,5 @@ pl:
       contact_us: 'Kontakt'
       contact_requests: 'Prośby o kontakt'
     copyright_text: 'dostarcza narzędzi, których biznes używa do zgodności z ustawą o ochronie prywatności konsumentów (ang. CCPA).'
+  assets:
+    logo: 'Logo FMA Szablon'

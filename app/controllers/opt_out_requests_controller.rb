@@ -1,12 +1,32 @@
-class ContactRequestsController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+class OptOutRequestsController < ApplicationController
+  def index; end
 
-  def index
-    if current_user&.is_admin?
-      @contact_requests = ContactRequest.order('id desc').all
-    else
-      flash[:warning] = t('public.contact_us.flash.only_admins_allowed')
-      redirect_to :root
-    end
+  def new
+    @opt_out_request = OptOutRequest.new
+  end
+
+  def create
+    binding.pry
+    @opt_out_request = OptOutRequest.new(opt_out_request_params).merge(
+      meta_data: { ip: request.remote_ip }
+    )
+    binding.pry
+  end
+
+  def destroy; end
+
+  private
+
+  def opt_out_request_params
+    params.require(:opt_out_request)
+          .permit(
+            :request_type,
+            :name,
+            :street_address,
+            :city,
+            :postal_code,
+            :state,
+            :meta_data
+          )
   end
 end

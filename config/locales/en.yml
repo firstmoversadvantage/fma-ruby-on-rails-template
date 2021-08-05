@@ -40,8 +40,25 @@ en:
           email_address: 'Email address'
           telephone: 'Telephone'
           comments: 'Message'
+      opt_out_request:
+        name: 'Name'
+        address: 'Address'
+        street_address: 'Street Address'
+        city: 'City'
+        postal_code: 'Postal Code'
+        state: 'State'
+        meta_data: 'Meta'
+        request_type: 'Request Type'
   flash:
     cookie: "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details."
+  opt_out_requests:
+    new:
+      title: 'New Opt-Out Request'
+    index:
+      title: 'Opt-Out Requests'
+    form:
+      errors: 'stopped you from sending this request.'
+      submit: 'Send'
   public:
     index:
       title: "Coming Soon"
@@ -89,3 +106,6 @@ en:
       contact_us: 'Contact us'
       contact_requests: 'Contact requests'
     copyright_text: 'provides tools that businesses use for Consumer Privacy Act Compliance.'
+  assets:
+    logo: 'FMA Template Logo'
+

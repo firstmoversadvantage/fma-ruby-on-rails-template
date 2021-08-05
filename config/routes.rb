@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
+  resources :opt_out_requests, only: [:index, :new, :create, :destroy]
+
   # Public Controller
   # get 'public/index'
   match 'contact-us', to: 'public#contact_us', via: %i[get post]
