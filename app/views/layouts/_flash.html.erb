@@ -1,4 +1,4 @@
-<div>
+<div class="mb-4">
   <% flash.each do |type, msg| %>
     <% next if flash_message_is_cookie_info(msg) %>
     <div class="alert <%= bootstrap_class_for_flash(type) %> alert-dismissable fade show">

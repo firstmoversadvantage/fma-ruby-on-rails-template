@@ -1,0 +1,40 @@
+<footer class="footer">
+  <div class="container">
+    <% if flash[:cookie_notice] %>
+      <div class="alert alert-info" role="alert">
+        <%= flash[:cookie_notice] %>
+        <%= link_to(t('ok'), saw_cookie_notice_path, method: :post, class: 'float-right') unless cookies[:saw_cookie_notice] %>
+      </div>
+    <% end %>
+
+    <ul class="nav">
+      <li class="nav-item">
+        <%# link_to 'Contact Us', contact_us_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('footer.nav_links.faq'), faq_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('footer.nav_links.cookie_policy'), cookie_policy_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('footer.nav_links.privacy_policy'), privacy_policy_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('footer.nav_links.terms_of_use'), terms_of_use_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to t('footer.nav_links.contact_us'), contact_us_path, class: 'nav-link' %>
+      </li>
+      <% if user_signed_in? && current_user.is_admin? %>
+        <li class="nav-item">
+          <%= link_to t('footer.nav_links.contact_requests'), contact_requests_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="text-muted">
+      &copy; 2019<%= " - #{Date.today.year}" if Date.today.year > 2019 %>  <%= FMA_LLC %> <%= t('footer.copyright_text') %>
+    </div>
+  </div>
+
+</footer>
