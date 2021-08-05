@@ -36,7 +36,7 @@ To generate credentials, run:
   - in atom, use `EDITOR="atom --wait" rails credentials:edit`
   - in vim, make sure it's up to date and use `EDITOR=vim rails credentials:edit`
 
-Enter your keys, save and exit. See config/credentials.example.yml for examples.
+Enter your keys, save and exit. See config/credentials.example.yml for examples. See Keybase for master.key for this project.
 
 Set up locking strategy during configuration (https://github.com/plataformatec/devise/wiki/How-To:-Add-:lockable-to-Users).
 
@@ -67,6 +67,10 @@ To use Vault, search the project for 'vault' and read the comments.
 To store assets on s3, use `EDITOR="atom --wait" rails credentials:edit` to enter amazon credentials. See examples in config/credentials.example.yml.
 By default, images are stored locally for development and test environments, and on s3 in production environment (look for `config.active_storage.service` to change it).
 See comments in credentials.example.yml and storage.yml for more details.
+
+## S3
+Visit https://developers.google.com/recaptcha/intro to see how to use reCAPTCHA. You'll need to register your website on https://www.google.com/recaptcha/admin/, choose catcha type, and you'll get site_key and secret_key. Put them in the credentials.
+You will also find some sample keys (for development only) in config/credentials.yml.enc.
 
 ## How to run the test suite
   `rails test` # run all tests
