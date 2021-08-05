@@ -24,7 +24,7 @@ if Rails.env.development?
 
   OptOutRequest.create(
     name: 'John Doe',
-    request_type: 'opt-out',
+    request_type: 'opt_out',
     street_address: '2575 Pearl St, Ste 230',
     city: 'Boulder',
     postal_code: '80302',
