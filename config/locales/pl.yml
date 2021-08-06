@@ -45,6 +45,9 @@ pl:
     form:
       errors: 'uniemożliwił/y wysłanie wniosku.'
       submit: 'Wyślij'
+    thank_you:
+      title: 'Twój wniosek został zapisany.'
+      message: 'Dziękujemy za wiadomość. Skontaktujemy się z Tobą jak najszybciej.'
   public:
     index:
       title: "Public#index"

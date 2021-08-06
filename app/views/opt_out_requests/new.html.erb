@@ -1,6 +1,6 @@
 <h1><%= t('public.opt_out_requests.new.title') %></h1>
 
-<%= form_with model: @opt_out_request do |f| %>
+<%= form_with model: @opt_out_request, local: true do |f| %>
   <% if @opt_out_request.errors.any? %>
     <div class="form-errors">
       <ul class="alert alert-danger">
@@ -13,7 +13,6 @@
   <% end %>
   <div class="form-group">
     <%= label(:opt_out_request, :request_type, class: 'required') %>
-    <%#= f.select :request_type, OptOutRequest.request_types.to_a, :first, :first, class: 'form-control', required: true %>
     <%= f.select :request_type, OptOutRequest.request_types.keys.map { |w| [w.humanize, w] }, {}, { class: 'form-control' } %>
   </div>
   <div class="form-group">

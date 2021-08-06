@@ -59,6 +59,9 @@ en:
     form:
       errors: 'stopped you from sending this request.'
       submit: 'Send'
+    thank_you:
+      title: 'Your request has been saved.'
+      message: 'Thank you for your message. We will be in touch with you soon.'
   public:
     index:
       title: "Coming Soon"

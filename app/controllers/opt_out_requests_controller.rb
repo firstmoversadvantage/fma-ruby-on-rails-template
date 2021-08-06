@@ -16,13 +16,15 @@ class OptOutRequestsController < ApplicationController
         }
       )
     )
-    binding.pry
     if @opt_out_request.save
-      # TODO display thank you page
+      # TODO send email
+      redirect_to thank_you_opt_out_requests_path
     else
       render :new
     end
   end
+
+  def thank_you; end
 
   def destroy; end
 
