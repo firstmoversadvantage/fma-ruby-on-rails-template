@@ -2,12 +2,7 @@ require 'test_helper'
 
 class ContactRequestTest < ActiveSupport::TestCase
   setup do
-    @contact_request = ContactRequest.new(
-      name: Faker::Internet.username(specifier: 10),
-      email_address: Faker::Internet.email,
-      telephone: Faker::PhoneNumber.phone_number,
-      comments: Faker::Lorem.sentence
-    )
+    @contact_request = create :contact_request
   end
 
   test 'contact request without name is not created' do
@@ -57,7 +52,8 @@ class ContactRequestTest < ActiveSupport::TestCase
   end
 
   test 'contact request has name, email and telephone encrypted' do
-    contact_request = ContactRequest.create(
+    contact_request = create(
+      :contact_request,
       name: 'test',
       email_address: 'test@fma_template.com',
       telephone: '1234567890',

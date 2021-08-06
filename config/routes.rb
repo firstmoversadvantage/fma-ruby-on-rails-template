@@ -24,10 +24,9 @@ Rails.application.routes.draw do
     collection { get 'thank-you' => 'opt_out_requests#thank_you' }
   end
 
-  resources :contact_requests, path: 'contact-requests', only: [:index]
+  resources :contact_requests, path: 'contact-requests', only: [:index, :new, :create]
 
   # Public Controller
-  match 'contact-us', to: 'public#contact_us', via: %i[get post]
   get 'cookie-policy', to: 'public#cookie_policy'
   get 'faq', to: 'public#faq'
   get 'privacy-policy-california', to: 'public#privacy_policy_california'
