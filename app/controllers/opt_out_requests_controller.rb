@@ -6,11 +6,22 @@ class OptOutRequestsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @opt_out_request = OptOutRequest.new(opt_out_request_params).merge(
-      meta_data: { ip: request.remote_ip }
+    @opt_out_request = OptOutRequest.new(
+      opt_out_request_params.merge(
+        meta_data: {
+          ip: request.remote_ip,
+          referer: request.referrer,
+          # user_agent: request.env['HTTP_USER_AGENT'],
+          # TODO add more params
+        }
+      )
     )
     binding.pry
+    if @opt_out_request.save
+      # TODO display thank you page
+    else
+      render :new
+    end
   end
 
   def destroy; end

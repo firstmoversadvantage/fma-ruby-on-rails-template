@@ -1,5 +1,5 @@
 class OptOutRequest < ApplicationRecord
-  enum request_type: [:opt_out, :disclosure, :deletion]
+  enum request_type: %i[opt_out disclosure deletion]
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :street_address, presence: true, length: { maximum: 50 }
