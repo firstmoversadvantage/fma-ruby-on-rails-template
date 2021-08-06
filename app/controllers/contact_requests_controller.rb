@@ -20,7 +20,7 @@ class ContactRequestsController < ApplicationController
     if @contact_request.save
       flash[:notice] = t('public.contact_us.flash.contact_request_saved')
       send_email_to_admins_about_new_request
-      redirect_to new_contact_request_path
+      redirect_to contact_us_path
     else
       render 'new'
     end

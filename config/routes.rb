@@ -24,7 +24,9 @@ Rails.application.routes.draw do
     collection { get 'thank-you' => 'opt_out_requests#thank_you' }
   end
 
-  resources :contact_requests, path: 'contact-requests', only: [:index, :new, :create]
+  resources :contact_requests, path: 'contact-requests', only: [:index]
+  get 'contact-us', to: 'contact_requests#new', as: 'contact_us'
+  post 'contact-us', to: 'contact_requests#create'
 
   # Public Controller
   get 'cookie-policy', to: 'public#cookie_policy'
