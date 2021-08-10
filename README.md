@@ -68,9 +68,9 @@ To store assets on s3, use `EDITOR="atom --wait" rails credentials:edit` to ente
 By default, images are stored locally for development and test environments, and on s3 in production environment (look for `config.active_storage.service` to change it).
 See comments in credentials.example.yml and storage.yml for more details.
 
-## S3
-Visit https://developers.google.com/recaptcha/intro to see how to use reCAPTCHA. You'll need to register your website on https://www.google.com/recaptcha/admin/, choose catcha type, and you'll get site_key and secret_key. Put them in the credentials.
-You will also find some sample keys (for development only) in config/credentials.yml.enc.
+## Captcha
+Visit https://developers.google.com/recaptcha/intro to see how to use reCAPTCHA. You'll need to register your website at https://www.google.com/recaptcha/admin/, choose catcha type, and you'll get site_key and secret_key. Put them in the credentials.
+For development, you will find sample keys in config/credentials.yml.enc.
 
 ## How to run the test suite
   `rails test` # run all tests
