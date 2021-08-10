@@ -1,5 +1,15 @@
 class OptOutRequestsController < ApplicationController
-  def index; end
+  def index
+    @opt_out_requests = OptOutRequest.all
+    if current_user&.is_admin?
+      @opt_out_requests = OptOutRequest.order('created_at desc')
+                                       .page(params[:page])
+                                       .per(20)
+    else
+      flash[:warning] = t('opt_out_requests.flash.only_admins_allowed')
+      redirect_to :root
+    end
+  end
 
   def new
     @opt_out_request = OptOutRequest.new
@@ -29,7 +39,17 @@ class OptOutRequestsController < ApplicationController
 
   def thank_you; end
 
-  def destroy; end
+  def destroy
+    if current_user&.is_admin?
+      @opt_out_request = OptOutRequest.find(params[:id])
+      @opt_out_request.destroy
+      flash[:notice] = t('opt_out_requests.flash.destroy_successfull')
+      redirect_to opt_out_requests_path
+    else
+      flash[:warning] = t('opt_out_requests.flash.only_admins_allowed')
+      redirect_to :root
+    end
+  end
 
   private
 

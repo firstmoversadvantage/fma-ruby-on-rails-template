@@ -49,6 +49,7 @@ en:
         state: 'State'
         meta_data: 'Meta'
         request_type: 'Request Type'
+        created_at: 'Created'
   flash:
     cookie: "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details."
   opt_out_requests:
@@ -62,6 +63,10 @@ en:
     thank_you:
       title: 'Your request has been saved.'
       message: 'Thank you for your message. We will be in touch with you soon.'
+    flash:
+      destroy_confirm: 'Are you sure?'
+      destroy_successfull: 'Request has been destroyed.'
+      only_admins_allowed: 'You are not allowed to enter this page.'
   public:
     index:
       title: "Coming Soon"

@@ -18,6 +18,7 @@ pl:
         state: 'Region'
         meta_data: 'Metadane'
         request_type: 'Typ wniosku'
+        created_at: 'Utworzono'
     errors:
       models:
         contact_request:
@@ -48,6 +49,10 @@ pl:
     thank_you:
       title: 'Twój wniosek został zapisany.'
       message: 'Dziękujemy za wiadomość. Skontaktujemy się z Tobą jak najszybciej.'
+    flash:
+      destroy_confirm: 'Jesteś pewien, że chcesz usunąć wniosek?'
+      destroy_successfull: 'Wniosek został usunięty.'
+      only_admins_allowed: 'Brak uprawnień do przeglądania zawartości tej strony.'
   public:
     index:
       title: "Public#index"
