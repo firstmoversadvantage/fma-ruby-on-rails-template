@@ -112,7 +112,9 @@ en:
       privacy_policy: 'Privacy Policy'
       terms_of_use: 'Terms of use'
       contact_us: 'Contact us'
+      opt_out: 'Opt Out'
       contact_requests: 'Contact requests'
+      opt_out_requests: 'Opt Out requests'
     copyright_text: 'provides tools that businesses use for Consumer Privacy Act Compliance.'
   assets:
     logo: 'FMA Template Logo'

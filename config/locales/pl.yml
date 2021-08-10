@@ -103,7 +103,9 @@ pl:
       privacy_policy: 'Polityka prywatności'
       terms_of_use: 'Zasady użytkowania'
       contact_us: 'Kontakt'
+      opt_out: 'Złóż wniosek o usunięcie danych'
       contact_requests: 'Prośby o kontakt'
+      opt_out_requests: 'Wnioski o usunięcie danych'
     copyright_text: 'dostarcza narzędzi, których biznes używa do zgodności z ustawą o ochronie prywatności konsumentów (ang. CCPA).'
   assets:
     logo: 'Logo FMA Szablon'
