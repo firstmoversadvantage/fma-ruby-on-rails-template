@@ -2,10 +2,10 @@
 
 ADMIN_EMAIL = 'brian.long@fmadata.com'
 ADMIN_SITE = ''
-BRIAN_EMAIL = 'brian.long@fmadata.com'
 COMPANY_AKA = 'FMAdata'
 FMA = 'First Movers Advantage'
 FMA_LLC = 'First Movers Advantage, LLC'
+OPT_OUT_REQUESTS_MANAGER = 'brian.long@fmadata.com'
 OUR_CITY_STATE_ZIP = 'Boulder, CO 80302-3812'
 OUR_COMPANY = ''
 OUR_EMAIL_ADDRESS = ''
