@@ -3,7 +3,9 @@ class ContactRequestsController < ApplicationController
 
   def index
     if current_user&.is_admin?
-      @contact_requests = ContactRequest.order('id desc').all
+      @contact_requests = ContactRequest.order('id desc')
+                                        .page(params[:page])
+                                        .per(20)
     else
       flash[:warning] = t('public.contact_us.flash.only_admins_allowed')
       redirect_to :root
