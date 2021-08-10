@@ -16,7 +16,7 @@ class OptOutRequestsController < ApplicationController
         }
       )
     )
-    if @opt_out_request.save
+    if verify_recaptcha(model: @opt_out_request) && @opt_out_request.save
       AdminMailer.new_opt_out_request_notice(@opt_out_request.id).deliver_now
       redirect_to thank_you_opt_out_requests_path
     else
