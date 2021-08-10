@@ -12,7 +12,6 @@ class ContactRequestsController < ApplicationController
 
   def new
     @contact_request = ContactRequest.new
-    @title = t('public.contact_us.title')
   end
 
   def create
@@ -24,7 +23,6 @@ class ContactRequestsController < ApplicationController
     else
       render 'new'
     end
-    @title = t('public.contact_us.title')
   end
 
   private

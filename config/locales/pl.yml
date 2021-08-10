@@ -73,7 +73,10 @@ pl:
       title: 'FAQ'
       paragraph: "Znajdziesz mnie w app/views/public/faq.pl.html.erb"
     contact_us:
-      title: 'Skontaktuj się z nami'
+      new:
+        title: 'Skontaktuj się z nami'
+      index:
+        title: 'Prośby o kontakt'
       flash:
         contact_request_saved: 'Prośba o kontakt została zapisana, skontaktujemy się z Tobą jak najszybciej.'
         only_admins_allowed: 'Brak uprawnień do przeglądania zawartości tej strony.'
