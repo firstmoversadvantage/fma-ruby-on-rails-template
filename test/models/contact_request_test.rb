@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContactRequestTest < ActiveSupport::TestCase
   setup do
-    @contact_request = create :contact_request
+    @contact_request = build :contact_request
   end
 
   describe '.create' do
@@ -48,6 +48,12 @@ class ContactRequestTest < ActiveSupport::TestCase
     test 'contact request with too long comments is not created' do
       @contact_request.comments = Faker::Lorem.characters(number: 501)
       assert_no_difference('ContactRequest.count') do
+        @contact_request.save
+      end
+    end
+
+    test 'contact request with correct params is created' do
+      assert_difference('ContactRequest.count') do
         @contact_request.save
       end
     end

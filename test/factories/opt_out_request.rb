@@ -9,5 +9,6 @@ FactoryBot.define do
     city { Faker::Address.city }
     postal_code { Faker::Address.postcode }
     state { Faker::Address.state_abbr }
+    meta_data { { ip: '127.0.0.1' } }
   end
 end
