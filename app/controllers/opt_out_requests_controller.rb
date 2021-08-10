@@ -17,7 +17,7 @@ class OptOutRequestsController < ApplicationController
       )
     )
     if @opt_out_request.save
-      # TODO send email
+      AdminMailer.new_opt_out_request_notice(@opt_out_request.id).deliver_now
       redirect_to thank_you_opt_out_requests_path
     else
       render :new

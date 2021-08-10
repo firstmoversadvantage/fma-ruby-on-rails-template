@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-ADMIN_EMAIL = ''
+ADMIN_EMAIL = 'brian.long@fmadata.com'
 ADMIN_SITE = ''
+BRIAN_EMAIL = 'brian.long@fmadata.com'
 COMPANY_AKA = 'FMAdata'
 FMA = 'First Movers Advantage'
 FMA_LLC = 'First Movers Advantage, LLC'
