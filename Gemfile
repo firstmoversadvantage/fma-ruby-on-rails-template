@@ -109,3 +109,5 @@ gem 'devise-i18n'
 
 # https://github.com/ambethia/recaptcha
 gem "recaptcha"
+
+gem "browser"
