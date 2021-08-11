@@ -1,6 +1,9 @@
 <h1><%= t('opt_out_requests.new.title') %></h1>
+<p>You can exercise your privacy rights with the following options:</p>
 
-<%= form_with model: @opt_out_request, local: true do |f| %>
+<h2>1. Web Form</h2>
+<p>Use the form below to send a Privacy Request to <%= THIS_SITE %>.</p>
+<%= form_with model: @opt_out_request, local: true, class: 'mb-5' do |f| %>
   <% if @opt_out_request.errors.any? %>
     <div class="form-errors">
       <ul class="alert alert-danger">
@@ -39,3 +42,30 @@
   </div>
   <%= submit_tag t('opt_out_requests.form.submit'), class: 'btn btn-primary' %>
 <% end %>
+
+<h2>2. Mail-In Form</h2>
+<p>
+  If you prefer postal mail, you can print this
+  <%# TODO link to pdf %> Privacy Request Form
+  and mail it to our Privacy Desk.
+</p>
+
+<hr class="my-4" />
+
+<h2 class="h4">Legal Disclosures</h2>
+<p>
+  Depending on your location, you may have the legal right to opt-out of the resale of your personal information,
+  request disclosure of your personal information, or request the deletion of your personal information.
+  See the <%= THIS_HOST %> Privacy Policy at
+  <%= link_to "#{THIS_SITE}/privacy-policy", "/privacy-policy" %>
+  for details.
+</p>
+<p>
+  Authorized representatives acting on behalf of a consumer should use the printable
+  <%# TODO link to pdf %> Privacy Request Form
+  and include a copy of your signed representation agreement or power-of-attorney.
+</p>
+<p>
+  Consumers with disabilities may use the printable
+  <%# TODO link to pdf %> Privacy Request Form.
+</p>

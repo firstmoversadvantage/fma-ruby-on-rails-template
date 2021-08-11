@@ -40,7 +40,7 @@ pl:
         comments: 'Wiadomość'
   opt_out_requests:
     new:
-      title: 'Nowy wniosek'
+      title: 'Nie sprzedawaj moich danych osobowych'
     index:
       title: 'Wnioski o usunięcie danych'
     form:

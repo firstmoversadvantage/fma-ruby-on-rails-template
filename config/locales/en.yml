@@ -54,7 +54,7 @@ en:
     cookie: "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details."
   opt_out_requests:
     new:
-      title: 'New Opt-Out Request'
+      title: 'Do Not Sell My Personal Information'
     index:
       title: 'Opt-Out Requests'
     form:
