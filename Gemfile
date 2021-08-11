@@ -114,3 +114,6 @@ gem 'recaptcha'
 gem 'browser'
 
 gem 'kaminari'
+
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'

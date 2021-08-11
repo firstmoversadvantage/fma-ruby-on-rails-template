@@ -13,6 +13,12 @@ class OptOutRequestsController < ApplicationController
 
   def new
     @opt_out_request = OptOutRequest.new
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "new"
+      end
+    end
   end
 
   def create
