@@ -9,6 +9,16 @@ pl:
         email_address: 'Adres e-mail'
         telephone: 'Telefon'
         comments: 'Wiadomość'
+      opt_out_request:
+        name: 'Imię i nazwisko'
+        address: 'Adres'
+        street_address: 'Ulica'
+        city: 'Miasto'
+        postal_code: 'Kod pocztowy'
+        state: 'Region'
+        meta_data: 'Metadane'
+        request_type: 'Typ wniosku'
+        created_at: 'Utworzono'
     errors:
       models:
         contact_request:
@@ -28,6 +38,21 @@ pl:
         email_address: 'Adres e-mail'
         telephone: 'Telefon'
         comments: 'Wiadomość'
+  opt_out_requests:
+    new:
+      title: 'Nie sprzedawaj moich danych osobowych'
+    index:
+      title: 'Wnioski o usunięcie danych'
+    form:
+      errors: 'uniemożliwił/y wysłanie wniosku.'
+      submit: 'Wyślij'
+    thank_you:
+      title: 'Twój wniosek został zapisany.'
+      message: 'Dziękujemy za wiadomość. Skontaktujemy się z Tobą jak najszybciej.'
+    flash:
+      destroy_confirm: 'Jesteś pewien, że chcesz usunąć wniosek?'
+      destroy_successfull: 'Wniosek został usunięty.'
+      only_admins_allowed: 'Brak uprawnień do przeglądania zawartości tej strony.'
   public:
     index:
       title: "Public#index"
@@ -48,7 +73,10 @@ pl:
       title: 'FAQ'
       paragraph: "Znajdziesz mnie w app/views/public/faq.pl.html.erb"
     contact_us:
-      title: 'Skontaktuj się z nami'
+      new:
+        title: 'Skontaktuj się z nami'
+      index:
+        title: 'Prośby o kontakt'
       flash:
         contact_request_saved: 'Prośba o kontakt została zapisana, skontaktujemy się z Tobą jak najszybciej.'
         only_admins_allowed: 'Brak uprawnień do przeglądania zawartości tej strony.'
@@ -78,5 +106,9 @@ pl:
       privacy_policy: 'Polityka prywatności'
       terms_of_use: 'Zasady użytkowania'
       contact_us: 'Kontakt'
+      opt_out: 'Złóż wniosek o usunięcie danych'
       contact_requests: 'Prośby o kontakt'
+      opt_out_requests: 'Wnioski o usunięcie danych'
     copyright_text: 'dostarcza narzędzi, których biznes używa do zgodności z ustawą o ochronie prywatności konsumentów (ang. CCPA).'
+  assets:
+    logo: 'Logo FMA Szablon'

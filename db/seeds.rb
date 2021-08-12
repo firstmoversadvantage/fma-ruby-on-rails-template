@@ -7,13 +7,27 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if Rails.env.development?
-  User.delete_all
-  admin = User.create(
-    username: 'admin',
-    email: 'admin@fmadata.com',
-    is_admin: true,
-    password: 'password',
-    password_confirmation: 'password'
-  )
+  admin = User.find_or_create_by(username: 'admin') do |admin|
+    admin.email = 'admin@fmadata.com'
+    admin.is_admin = true
+    admin.password = 'password'
+    admin.password_confirmation = 'password'
+  end
   admin.confirm
+
+  ContactRequest.create(
+    email_address: 'hello@test.com',
+    name: 'John Doe',
+    telephone: '1231231234',
+    comments: 'Hello'
+  )
+
+  OptOutRequest.create(
+    name: 'John Doe',
+    request_type: 'opt_out',
+    street_address: '2575 Pearl St, Ste 230',
+    city: 'Boulder',
+    postal_code: '80302',
+    state: 'CO'
+  )
 end

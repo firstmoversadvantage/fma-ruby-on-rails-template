@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
   devise_for :users
 
   # Free Sidekiq
@@ -20,15 +22,16 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  # Public Controller
-  # get 'public/index'
-  match 'contact-us', to: 'public#contact_us', via: %i[get post]
+  resources :opt_out_requests, path: 'opt-out-requests', only: [:index, :new, :create, :destroy] do
+    collection { get 'thank-you' => 'opt_out_requests#thank_you' }
+  end
 
-  get 'contact-requests', to: 'contact_requests#index'
+  resources :contact_requests, path: 'contact-requests', only: [:index]
+  get 'contact-us', to: 'contact_requests#new', as: 'contact_us'
+  post 'contact-us', to: 'contact_requests#create'
+
+  # Public Controller
   get 'cookie-policy', to: 'public#cookie_policy'
-  get '/do-not-sell-my-personal-information/',
-      to: 'public#do_not_sell_my_personal_information',
-      as: :do_not_sell_my_personal_information
   get 'faq', to: 'public#faq'
   get 'privacy-policy-california', to: 'public#privacy_policy_california'
   get 'privacy-policy', to: 'public#privacy_policy'

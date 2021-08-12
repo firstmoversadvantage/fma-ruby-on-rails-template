@@ -40,8 +40,33 @@ en:
           email_address: 'Email address'
           telephone: 'Telephone'
           comments: 'Message'
+      opt_out_request:
+        name: 'Name'
+        address: 'Address'
+        street_address: 'Street Address'
+        city: 'City'
+        postal_code: 'Postal Code'
+        state: 'State'
+        meta_data: 'Meta'
+        request_type: 'Request Type'
+        created_at: 'Created'
   flash:
     cookie: "This site uses cookies. See our <a href='/cookie-policy'>Cookie Policy</a> for details."
+  opt_out_requests:
+    new:
+      title: 'Do Not Sell My Personal Information'
+    index:
+      title: 'Opt-Out Requests'
+    form:
+      errors: 'stopped you from sending this request.'
+      submit: 'Send'
+    thank_you:
+      title: 'Your request has been saved.'
+      message: 'Thank you for your message. We will be in touch with you soon.'
+    flash:
+      destroy_confirm: 'Are you sure?'
+      destroy_successfull: 'Request has been destroyed.'
+      only_admins_allowed: 'You are not allowed to enter this page.'
   public:
     index:
       title: "Coming Soon"
@@ -57,7 +82,10 @@ en:
     faq:
       title: 'FAQ'
     contact_us:
-      title: 'Contact us'
+      new:
+        title: 'Contact us'
+      index:
+        title: 'Contact Requests'
       flash:
         contact_request_saved: 'Your request has been saved. We will contact you ASAP.'
         only_admins_allowed: 'You are not allowed to enter this page.'
@@ -87,5 +115,10 @@ en:
       privacy_policy: 'Privacy Policy'
       terms_of_use: 'Terms of use'
       contact_us: 'Contact us'
+      opt_out: 'Opt Out'
       contact_requests: 'Contact requests'
+      opt_out_requests: 'Opt Out requests'
     copyright_text: 'provides tools that businesses use for Consumer Privacy Act Compliance.'
+  assets:
+    logo: 'FMA Template Logo'
+

@@ -4,6 +4,6 @@ class ContactRequestMailerPreview < ActionMailer::Preview
     # create one if you don't have any
     # User.create(is_admin: true, email: 'test@test.pl', username: 'AdminTest', password: 'password')
     admins = User.where(is_admin: true) 
-    ContactRequestMailer.new_contact_request_notice(admins)
+    AdminMailer.new_contact_request_notice(admins)
   end
 end

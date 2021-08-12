@@ -1,0 +1,19 @@
+<h1><%= t('public.contact_us.new.title') %></h1>
+
+<div class="row">
+  <div class="col-md-6 mb-4 mb-md-0">
+    <h4>By Email or Chat:</h4>
+    <%= render 'contact_requests/form' %>
+  </div>
+
+  <div class="col-md-6">
+    <h4>By US Mail:</h4>
+    <p>
+      <%= FMA_LLC %><br />
+      <%= OUR_STREET_ADDRESS %><br />
+      <%= OUR_CITY_STATE_ZIP %>
+    </p>
+
+    <p class="font-weight-bold">Please use the chat tool in the lower right corner for all other communications.</p>
+  </div>
+</div>

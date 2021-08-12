@@ -1,0 +1,37 @@
+<header class="header py-3">
+  <nav class="navbar navbar-expand-sm navbar-light container">
+    <a href="<%= root_path %>" class="navbar-brand">
+      <%= image_tag 'logo.png', alt: t('assets.logo'), title: t('assets.logo') %>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to edit_user_registration_path, class: "nav-link" do %>
+              Edit Account
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+              Sign Out
+            <% end %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+              Sign In
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_user_registration_path, class: "nav-link" do %>
+              Sign Up
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -74,6 +74,7 @@ group :development do
   # background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener_web'
 end
 
 group :test do
@@ -82,6 +83,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'minitest-spec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -105,3 +107,13 @@ gem 'aws-sdk-s3', require: false
 
 gem 'devise'
 gem 'devise-i18n'
+
+# https://github.com/ambethia/recaptcha
+gem 'recaptcha'
+
+gem 'browser'
+
+gem 'kaminari'
+
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
