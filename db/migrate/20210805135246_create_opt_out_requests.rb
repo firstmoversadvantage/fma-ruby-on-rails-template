@@ -2,7 +2,7 @@ class CreateOptOutRequests < ActiveRecord::Migration[6.1]
   def change
     create_table :opt_out_requests do |t|
       t.integer :request_type
-      t.text   :meta_data
+      t.json   :meta_data
 
       t.string :name_encrypted
       t.string :street_address_encrypted

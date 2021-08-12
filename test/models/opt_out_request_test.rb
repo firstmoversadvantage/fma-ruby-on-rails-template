@@ -8,6 +8,7 @@ class OptOutRequestTest < ActiveSupport::TestCase
   describe '.create' do
     test 'opt-out request without type is not created' do
       @opt_out_request.request_type = ''
+      refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
         @opt_out_request.save
       end
@@ -15,6 +16,7 @@ class OptOutRequestTest < ActiveSupport::TestCase
 
     test 'opt-out request without name is not created' do
       @opt_out_request.name = ''
+      refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
         @opt_out_request.save
       end
@@ -29,18 +31,21 @@ class OptOutRequestTest < ActiveSupport::TestCase
 
     test 'opt-out request without address fields is not created' do
       @opt_out_request.street_address = ''
+      refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
         @opt_out_request.save
       end
 
       @opt_out_request.street_address = '2575 Pearl St, Ste 230'
       @opt_out_request.city = ''
+      refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
         @opt_out_request.save
       end
 
       @opt_out_request.city = 'Boulder'
       @opt_out_request.postal_code = ''
+      refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
         @opt_out_request.save
       end
@@ -48,17 +53,20 @@ class OptOutRequestTest < ActiveSupport::TestCase
 
     test 'opt-out request with empty or incorrect state is not created' do
       @opt_out_request.state = ''
+      refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
         @opt_out_request.save
       end
 
       @opt_out_request.state = 'Incorrect'
+      refute @opt_out_request.valid?
       assert_no_difference('OptOutRequest.count') do
         @opt_out_request.save
       end
     end
 
     test 'opt-out request with correct params is created' do
+      assert @opt_out_request.valid?
       assert_difference('OptOutRequest.count') do
         @opt_out_request.save
       end

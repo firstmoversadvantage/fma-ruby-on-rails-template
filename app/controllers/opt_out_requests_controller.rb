@@ -1,6 +1,5 @@
 class OptOutRequestsController < ApplicationController
   def index
-    @opt_out_requests = OptOutRequest.all
     if current_user&.is_admin?
       @opt_out_requests = OptOutRequest.order('created_at desc')
                                        .page(params[:page])

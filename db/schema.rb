@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_135246) do
 
   create_table "opt_out_requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "request_type"
-    t.text "meta_data"
+    t.json "meta_data"
     t.string "name_encrypted"
     t.string "street_address_encrypted"
     t.string "city_encrypted"

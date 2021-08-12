@@ -12,7 +12,7 @@ class UserTest < ActiveSupport::TestCase
   describe '.create' do
     test 'correctly creates user with username, encrypts email, creates hash' do
       assert_difference('User.count') do
-        User.create(@user_params)
+        create :user, @user_params
       end
 
       user = User.find_by(username: 'test')
@@ -24,7 +24,7 @@ class UserTest < ActiveSupport::TestCase
 
   describe '.search_by_email_hash' do
     test 'looks for user with encrypted email' do
-      User.create(@user_params)
+      create :user, @user_params
 
       user = User.search_by_email_hash(@user_params[:email])
       assert_equal user.email, 'test@test.com'

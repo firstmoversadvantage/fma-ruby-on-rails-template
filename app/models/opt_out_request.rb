@@ -18,6 +18,4 @@ class OptOutRequest < ApplicationRecord
   attr_encrypted :city
   attr_encrypted :postal_code
   attr_encrypted :state
-
-  serialize :meta_data, JSON
 end
