@@ -22,10 +22,6 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  resources :opt_out_requests, path: 'opt-out-requests', only: [:index, :new, :create, :destroy] do
-    collection { get 'thank-you' => 'opt_out_requests#thank_you' }
-  end
-
   resources :contact_requests, path: 'contact-requests', only: [:index]
   get 'contact-us', to: 'contact_requests#new', as: 'contact_us'
   post 'contact-us', to: 'contact_requests#create'
