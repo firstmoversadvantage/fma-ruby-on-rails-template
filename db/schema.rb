@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_05_135246) do
+ActiveRecord::Schema.define(version: 2019_11_26_122800) do
 
-  create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_135246) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "utf8mb4", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_135246) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "contact_requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "contact_requests", charset: "utf8mb4", force: :cascade do |t|
     t.string "name_encrypted"
     t.string "email_address_encrypted"
     t.string "telephone_encrypted"
@@ -46,24 +46,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_135246) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "opt_out_requests", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "request_type"
-    t.json "meta_data"
-    t.string "name_encrypted"
-    t.string "street_address_encrypted"
-    t.string "city_encrypted"
-    t.string "postal_code_encrypted"
-    t.string "state_encrypted"
-    t.string "name_encrypted_iv"
-    t.string "street_address_encrypted_iv"
-    t.string "city_encrypted_iv"
-    t.string "postal_code_encrypted_iv"
-    t.string "state_encrypted_iv"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", force: :cascade do |t|
     t.string "username", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

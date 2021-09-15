@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  # before_action :configure_permitted_parameters, if: :devise_controller?
   around_action :switch_locale
   before_action :check_if_saw_cookie_notice
 
@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
     I18n.with_locale(locale, &action)
   end
 
-  # app/controllers/application_controller.rb
   def default_url_options
     { locale: I18n.locale }
   end
@@ -24,11 +23,11 @@ class ApplicationController < ActionController::Base
     redirect_back(fallback_location: root_path)
   end
 
-  protected
+  # protected
 
-  def configure_permitted_parameters
-    added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
-  end
+  # def configure_permitted_parameters
+  #   added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
+  #   devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+  #   devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  # end
 end
