@@ -40,6 +40,17 @@
   </div>
 <% end %>
 
+<h2>Accounts</h2>
+<% if resource.accounts.any? %>
+  <% resource.accounts.each do |account| %>
+    <%= render 'accounts/form', account: account %>
+  <% end %>
+<% else %>
+  <% resource.accounts.new do |account| %>
+    <%= render 'accounts/form', account: account %>
+  <% end %>
+<% end %>
+
 
 <h3><%= t('.cancel_my_account') %></h3>
 <p>

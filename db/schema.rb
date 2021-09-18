@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_122800) do
+ActiveRecord::Schema.define(version: 2021_09_15_221255) do
+
+  create_table "accounts", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "telephone"
+    t.string "telephone_country_code", default: "1"
+    t.string "billing_address"
+    t.string "billing_city"
+    t.string "billing_state"
+    t.string "billing_country_code", default: "US"
+    t.boolean "is_active", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "accounts_users", charset: "utf8mb4", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "active_storage_attachments", charset: "utf8mb4", force: :cascade do |t|
     t.string "name", null: false

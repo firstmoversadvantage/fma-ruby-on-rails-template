@@ -50,12 +50,11 @@ class User < ApplicationRecord
     key: Rails.application.credentials.attribute_key,
     prefix: '',
     suffix: '_encrypted')
+
   attr_encrypted :email
 
-  # For Vault:
-  # attr_accessor :email
-  # include Vault::EncryptedModel
-  # vault_attribute :email
+  has_many :accounts_users, dependent: :destroy
+  has_many :accounts, through: :accounts_users
 
   validates :username,
             presence: true,

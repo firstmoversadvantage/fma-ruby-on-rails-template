@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :accounts
+
   # Free Sidekiq
   if Gem.loaded_specs.key? 'sidekiq'
     require 'sidekiq'

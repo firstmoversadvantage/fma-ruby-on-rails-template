@@ -3,8 +3,6 @@ if Rails.env.development?
     { username: 'tyler', email: 'tyler.vannurden@gmail.com' }
   ]
 
-  User.destroy_all
-
   devs.each do |dev|
     admin = User.find_or_create_by(username: dev[:username]) do |admin|
       admin.email = dev[:email]
@@ -14,5 +12,13 @@ if Rails.env.development?
       admin.skip_confirmation!
     end
 
+    if admin.username == 'tyler'
+      admin.accounts.create!(
+        name: 'Tyler VanNurden, LLC',
+        billing_address: '2735 Darley Ave',
+        billing_city: 'Boulder',
+        billing_state: 'CO'
+      )
+    end
   end
 end

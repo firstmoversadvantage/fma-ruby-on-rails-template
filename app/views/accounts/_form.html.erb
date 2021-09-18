@@ -1,0 +1,43 @@
+<%= form_for(account, url: accounts_path(account)) do |f| %>
+
+  <%= render "devise/shared/error_messages", resource: account %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :billing_address %>
+    <%= f.text_field :billing_address, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :billing_city %>
+    <%= f.text_field :billing_city, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :billing_state %>
+    <%= f.text_field :billing_state, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :billing_country_code %>
+    <%= f.text_field :billing_country_code, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :telephone_country_code %>
+    <%= f.text_field :telephone_country_code, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :telephone %>
+    <%= f.text_field :telephone, class: 'form-control' %>
+  </div>
+
+  <div class="form-group mb-5">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+  </div>
+<% end %>

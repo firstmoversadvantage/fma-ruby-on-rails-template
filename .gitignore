@@ -36,3 +36,6 @@ yarn-debug.log*
 .yarn-integrity
 
 /config/credentials/development.key
+
+# Ignore Time Machine backup files
+*.DS_Store
