@@ -3,7 +3,7 @@ class OptOutRequestsController < ApplicationController
     if current_user&.is_admin?
       @opt_out_requests = OptOutRequest.order('created_at desc')
                                        .page(params[:page])
-                                       .per(20)
+                                       .per(10)
     else
       flash[:warning] = t('opt_out_requests.flash.only_admins_allowed')
       redirect_to :root

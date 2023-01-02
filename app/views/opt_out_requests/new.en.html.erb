@@ -14,18 +14,22 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-group">
-    <%= label(:opt_out_request, :request_type, class: 'required') %>
+
+  <div class="mb-3">
+    <%= label(:opt_out_request, :request_type, class: 'form-label required') %>
     <%= f.select :request_type, OptOutRequest.request_types.keys.map { |w| [w.humanize, w] }, {}, { class: 'form-control' } %>
   </div>
-  <div class="form-group">
-    <%= label :opt_out_request, t('activerecord.attributes.opt_out_request.name'), class: 'required' %>
+
+  <div class="mb-3">
+    <%= label :opt_out_request, t('activerecord.attributes.opt_out_request.name'), class: 'form-label required' %>
     <%= f.text_field :name, class: 'form-control', required: true %>
   </div>
-  <div class="form-group">
-    <%= label(:opt_out_request, t('activerecord.attributes.opt_out_request.address'), nil, class: 'required') %>
+
+  <div class="mb-3">
+    <%= label(:opt_out_request, t('activerecord.attributes.opt_out_request.address'), nil, class: 'form-label required') %>
     <%= f.text_field :street_address, class: 'form-control', required: true, placeholder: '2575 Pearl St, Ste 230' %>
   </div>
+
   <div class="row">
     <div class='col-md-6 mb-3'>
       <%= f.text_field :city, class: 'form-control', required: true, placeholder: 'Boulder' %>
@@ -37,9 +41,11 @@
       <%= f.text_field :postal_code, class: 'form-control', required: true, placeholder: '80302' %>
     </div>
   </div>
-  <div class="form-group">
+
+  <div class="mb-3">
     <%= recaptcha_tags %>
   </div>
+
   <%= submit_tag t('opt_out_requests.form.submit'), class: 'btn btn-primary' %>
 <% end %>
 
