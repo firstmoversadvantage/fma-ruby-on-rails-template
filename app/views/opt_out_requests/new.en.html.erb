@@ -5,14 +5,12 @@
 <p>Use the form below to send a Privacy Request to <%= THIS_SITE %>.</p>
 <%= form_with model: @opt_out_request, local: true, class: 'mb-5' do |f| %>
   <% if @opt_out_request.errors.any? %>
-    <div class="form-errors">
-      <ul class="alert alert-danger">
-        <h4> <%= t('error', count: @opt_out_request.errors.count) %> <%= t('opt_out_requests.form.errors') %></h4>
-        <% @opt_out_request.errors.full_messages.each do |msg| %>
-          <li class="ml-3"><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <ul class="alert alert-danger">
+      <h4> <%= t('error', count: @opt_out_request.errors.count) %> <%= t('opt_out_requests.form.errors') %></h4>
+      <% @opt_out_request.errors.full_messages.each do |msg| %>
+        <li class="ms-3"><%= msg %></li>
+      <% end %>
+    </ul>
   <% end %>
 
   <div class="mb-3">
