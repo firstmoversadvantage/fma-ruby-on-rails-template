@@ -14,8 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_if_saw_cookie_notice
-    flash[:cookie_notice] = t('flash.cookie').html_safe \
-      unless cookies[:saw_cookie_notice]
+    flash[:cookie_notice] = t('flash.cookie').html_safe unless cookies[:saw_cookie_notice]
   end
 
   def saw_cookie_notice
