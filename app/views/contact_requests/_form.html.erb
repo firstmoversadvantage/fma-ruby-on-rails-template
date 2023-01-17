@@ -3,31 +3,35 @@
               method: 'POST',
               local: true,
               url: "/contact-us?locale=#{params[:locale]}" do |f| %>
+
   <% if @contact_request.errors.any? %>
-    <div class="form-errors">
-      <ul class="alert alert-danger">
-        <h4> <%= t('error', count: @contact_request.errors.count) %> <%= t('public.contact_us.form.errors') %></h4>
-        <% @contact_request.errors.full_messages.each do |msg| %>
-          <li class="ml-3"><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+    <ul class="alert alert-danger">
+      <h4> <%= t('error', count: @contact_request.errors.count) %> <%= t('public.contact_us.form.errors') %></h4>
+      <% @contact_request.errors.full_messages.each do |msg| %>
+        <li class="ms-3"><%= msg %></li>
+      <% end %>
+    </ul>
   <% end %>
-  <div class="form-group">
-    <%= label(:contact_request, :name, class: 'required') %>
+
+  <div class="mb-3">
+    <%= label(:contact_request, :name, class: 'form-label required') %>
     <%= f.text_field :name, class: 'form-control', required: true %>
   </div>
-  <div class="form-group">
-    <%= label(:contact_request, :email_address, nil, class: 'required') %>
+
+  <div class="mb-3">
+    <%= label(:contact_request, :email_address, class: 'form-label required') %>
     <%= f.text_field :email_address, class: 'form-control', required: true %>
   </div>
-  <div class="form-group">
-    <%= label(:contact_request, :telephone) %>
+
+  <div class="mb-3">
+    <%= label(:contact_request, :telephone, class: 'form-label') %>
     <%= f.text_field :telephone, class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= label(:contact_request, :comments) %>
+
+  <div class="mb-3">
+    <%= label(:contact_request, :comments, class: 'form-label') %>
     <%= f.text_area :comments, class: 'form-control', placeholder: t('public.contact_us.form.comments.placeholder') %>
   </div>
+
   <%= submit_tag t('public.contact_us.form.submit'), class: 'btn btn-primary' %>
 <% end %>

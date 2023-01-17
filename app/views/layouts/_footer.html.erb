@@ -1,43 +1,73 @@
-<footer class="footer py-3">
-  <div class="container">
-    <% if flash[:cookie_notice] %>
-      <div class="alert alert-info" role="alert">
-        <%= flash[:cookie_notice] %>
-        <%= link_to(t('ok'), saw_cookie_notice_path, method: :post, class: 'float-right') unless cookies[:saw_cookie_notice] %>
+<footer class="footer bg-light text-muted">
+  <!-- Navigation  -->
+  <section class="footer-navigation">
+    <div class="container">
+      <div class="row py-4">
+        <div class="col-md-12 col-xl-3 mb-4 mb-md-5 mb-xl-0">
+          <div class="text-uppercase fw-bold mb-3"><%= COMPANY_NAME %></div>
+          <p>
+            This is company description.
+          </p>
+          <a href="<%= root_path %>">
+            <%= image_tag 'logo.png', alt: t('assets.logo'), title: t('assets.logo'), class: 'footer-brand', width: "70" %>
+          </a>
+        </div>
+
+        <div class="col-md-3 col-xl-3 mb-4 mb-lg-0">
+          <div class="text-uppercase fw-bold mb-3">Company</div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <%= link_to t('footer.nav_links.faq'), faq_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('footer.nav_links.contact_us'), contact_us_path, class: 'nav-link' %>
+            </li>
+            <% if user_signed_in? && current_user.is_admin? %>
+              <li class="nav-item">
+                <%= link_to t('footer.nav_links.contact_requests'), contact_requests_path, class: 'nav-link' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-md-3 col-xl-3 mb-4 mb-lg-0">
+          <div class="text-uppercase fw-bold mb-3">Conditions</div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <%= link_to t('footer.nav_links.terms_of_use'), terms_of_use_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('footer.nav_links.privacy_policy'), privacy_policy_path, class: 'nav-link' %>
+            <li class="nav-item">
+              <%= link_to t('footer.nav_links.opt_out'), new_opt_out_request_path, class: 'nav-link' %>
+            </li>
+            <% if user_signed_in? && current_user.is_admin? %>
+              <li class="nav-item">
+                <%= link_to t('footer.nav_links.opt_out_requests'), opt_out_requests_path, class: 'nav-link' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-md col-xl">
+          <div class="text-uppercase fw-bold mb-3">Contact</div>
+          <p>
+            <i class="fa-solid fa-house me-3"></i><%= OUR_STREET_ADDRESS %><br />
+            <span style="padding-left: 2.1rem;"><%= OUR_CITY_STATE_ZIP %></span>
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope me-3"></i><%= OUR_EMAIL_ADDRESS %>
+          </p>
+          <p>
+            <i class="fa-solid fa-phone me-3"></i><%= OUR_TELEPHONE %>
+          </p>
+        </div>
       </div>
-    <% end %>
-
-    <ul class="nav">
-      <li class="nav-item">
-        <%= link_to t('footer.nav_links.faq'), faq_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('footer.nav_links.cookie_policy'), cookie_policy_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('footer.nav_links.privacy_policy'), privacy_policy_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('footer.nav_links.terms_of_use'), terms_of_use_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('footer.nav_links.opt_out'), new_opt_out_request_path, class: 'nav-link' %>
-      </li>
-      <li class="nav-item">
-        <%= link_to t('footer.nav_links.contact_us'), contact_us_path, class: 'nav-link' %>
-      </li>
-      <% if user_signed_in? && current_user.is_admin? %>
-        <li class="nav-item">
-          <%= link_to t('footer.nav_links.contact_requests'), contact_requests_path, class: 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to t('footer.nav_links.opt_out_requests'), opt_out_requests_path, class: 'nav-link' %>
-        </li>
-      <% end %>
-    </ul>
-    <div class="text-muted">
-      &copy; 2019<%= " - #{Date.today.year}" if Date.today.year > 2019 %>  <%= FMA_LLC %> <%= t('footer.copyright_text') %>
     </div>
-  </div>
+  </section>
 
+  <!-- Copyright -->
+  <div class="footer-copyright text-center p-3">
+    <small>&copy; <%= Date.today.year %>  <%= COMPANY_LLC %></small>
+  </div>
 </footer>

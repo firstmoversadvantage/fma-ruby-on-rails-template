@@ -1,6 +1,23 @@
+$link-color: #6c757d;
+$link-color-active: rgba(0, 0, 0, 0.7);
+$copyright-background: rgba(0, 0, 0, 0.05);
+
 .footer {
-  .nav {
-    margin-left: -15px;
-    margin-right: -15px;
+  &-brand {
+    width: 70px;
+  }
+
+  &-navigation {
+    .nav-link {
+      padding-left: 0;
+      color: $link-color;
+      &:hover {
+        color: $link-color-active;
+      }
+    }
+  }
+
+  &-copyright {
+    background-color: $copyright-background;
   }
 }
