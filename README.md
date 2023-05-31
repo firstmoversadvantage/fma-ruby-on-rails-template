@@ -65,6 +65,9 @@ To use Vault, search the project for 'vault' and read the comments.
 
 ## Other dependencies 
 
+### Redis
+in order for Sidekiq to work it requires redis version of at least 6.2 (but since it's deprecated, recommended version is 7)
+
 ### S3
 To store assets on s3, use `EDITOR="atom --wait" rails credentials:edit` to enter amazon credentials. See examples in config/credentials.example.yml.
 By default, images are stored locally for development and test environments, and on s3 in production environment (look for `config.active_storage.service` to change it).
